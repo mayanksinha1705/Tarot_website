@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- ══ SEO: PRIMARY ══ -->
+  <title>Pick Your Tarot Cards — Start Your Free Reading | Tarot's Whisper</title>
+  <meta name="description" content="Select your tarot cards from a shuffled 78-card deck. Choose 1, 3 or 5 cards for General, Career, Love, Health or Yes/No spreads. Free online tarot reading.">
+  <meta name="keywords" content="pick tarot cards online, tarot card selection, choose tarot cards, tarot spread, free tarot reading cards">
+  <meta name="author" content="Tarot's Whisper">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://tarotswhisper.com/card-selection.html">
+
+  <!-- ══ SEO: OPEN GRAPH ══ -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tarotswhisper.com/card-selection.html">
+  <meta property="og:title" content="Pick Your Tarot Cards | Tarot's Whisper">
+  <meta property="og:description" content="Select your cards from a shuffled 78-card deck and receive your personalised tarot reading instantly.">
+  <meta property="og:image" content="https://tarotswhisper.com/og-preview.jpg">
+  <meta property="og:site_name" content="Tarot's Whisper">
+
+  <!-- ══ SEO: TWITTER CARD ══ -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Pick Your Tarot Cards | Tarot's Whisper">
+  <meta name="twitter:description" content="Select your cards from a shuffled 78-card deck and receive your personalised tarot reading instantly.">
+  <meta name="twitter:image" content="https://tarotswhisper.com/og-preview.jpg">
+
+  <!-- ══ SEO: STRUCTURED DATA ══ -->
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Tarot Card Selection","description":"Choose your tarot cards from a full shuffled 78-card deck for a personalised reading.","url":"https://tarotswhisper.com/card-selection.html","isPartOf":{"@type":"WebSite","name":"Tarot's Whisper","url":"https://tarotswhisper.com"},"breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://tarotswhisper.com/"},{"@type":"ListItem","position":2,"name":"Pick Your Cards","item":"https://tarotswhisper.com/card-selection.html"}]}}</script>
+
+  <!-- ══ ADS: GOOGLE ADSENSE ══ -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXX" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cinzel:wght@400;500;600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --midnight: #05071a; --navy: #080c2a; --navy-mid: #0d1240; --navy-light: #131a52;
+      --gold: #c9a84c; --gold-light: #e8c97e; --gold-pale: #f5e6b8; --gold-dim: #6b5520;
+      --white: #f8f4ee; --white-dim: rgba(248,244,238,0.65); --glow: rgba(201,168,76,0.35);
+      --card-w: 88px; --card-h: 138px;
+      --fd: 'Cinzel Decorative', serif; --fs: 'Cinzel', serif; --fb: 'EB Garamond', serif;
+      --ease: cubic-bezier(0.25,0.46,0.45,0.94);
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--midnight); color: var(--white);
+      font-family: var(--fb); min-height: 100vh; overflow-x: hidden;
+      opacity: 0; animation: bodyFade 0.6s 0.1s ease forwards;
+    }
+    @keyframes bodyFade { to { opacity: 1; } }
+    ::-webkit-scrollbar { width: 5px; height: 4px; }
+    ::-webkit-scrollbar-track { background: var(--navy); }
+    ::-webkit-scrollbar-thumb { background: var(--gold-dim); border-radius: 3px; }
+    #starCanvas { position:fixed; top:0; left:0; width:100%; height:100%; z-index:0; pointer-events:none; }
+
+    /* NAV */
+    
+    
+    
+    
+    
+    .page { position:relative; z-index:1; }
+
+    /* HEADER */
+    .sel-head { padding:6.5rem 2rem 1.5rem; text-align:center; }
+    .breadcrumb { font-family:var(--fs); font-size:0.68rem; letter-spacing:0.3em; text-transform:uppercase; color:var(--gold-dim); margin-bottom:0.7rem; }
+    .breadcrumb a { color:var(--gold-dim); text-decoration:none; transition:color 0.3s; }
+    .breadcrumb a:hover { color:var(--gold); }
+    .sel-title { font-family:var(--fd); font-size:clamp(1.7rem,4vw,3rem); color:var(--gold-pale); text-shadow:0 0 45px rgba(201,168,76,0.3); margin-bottom:0.4rem; animation:slideUp 0.8s 0.15s var(--ease) both; }
+    .sel-sub { color:var(--white-dim); font-style:italic; font-size:1.05rem; animation:slideUp 0.8s 0.3s var(--ease) both; }
+    .sel-sub strong { color:var(--gold); font-style:normal; }
+    @keyframes slideUp { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
+
+    /* QUESTION */
+    .q-wrap { max-width:560px; margin:1.5rem auto 0; padding:0 2rem; animation:slideUp 0.8s 0.45s var(--ease) both; }
+    .q-label { display:block; font-family:var(--fs); font-size:0.68rem; letter-spacing:0.22em; text-transform:uppercase; color:var(--gold); margin-bottom:0.6rem; text-align:center; }
+    .q-input { width:100%; background:rgba(13,18,64,0.55); border:1px solid rgba(201,168,76,0.2); color:var(--white); font-family:var(--fb); font-size:1rem; font-style:italic; padding:0.85rem 1.3rem; border-radius:3px; outline:none; transition:border-color 0.3s; resize:none; height:64px; }
+    .q-input:focus { border-color:var(--gold); box-shadow:0 0 18px rgba(201,168,76,0.1); }
+    .q-input::placeholder { color:rgba(248,244,238,0.28); }
+
+    /* TRAY */
+    .tray-section { padding:2.5rem 0 0.5rem; animation:slideUp 0.8s 0.6s var(--ease) both; }
+    .deck-assembly { display:flex; align-items:center; padding:0 2rem; }
+
+    /* GREY SIDE RAILS */
+    .rail {
+      flex-shrink:0; width:36px; height:190px;
+      position:relative; z-index:20;
+    }
+    .rail-left {
+      background:linear-gradient(to right,#c0c0c0 0%,#909090 40%,#686868 100%);
+      box-shadow:3px 0 10px rgba(0,0,0,0.5),inset -2px 0 6px rgba(0,0,0,0.3);
+      border-radius:12px 6px 6px 12px;
+    }
+    .rail-right {
+      background:linear-gradient(to left,#c0c0c0 0%,#909090 40%,#686868 100%);
+      box-shadow:-3px 0 10px rgba(0,0,0,0.5),inset 2px 0 6px rgba(0,0,0,0.3);
+      border-radius:6px 12px 12px 6px;
+    }
+
+    /* TRAY TRACK */
+    .tray-track {
+      flex:1; height:190px;
+      overflow-x:auto; overflow-y:visible;
+      cursor:grab; background:transparent;
+    }
+    .tray-track:active { cursor:grabbing; }
+    .tray-track::-webkit-scrollbar { height:3px; }
+    .tray-track::-webkit-scrollbar-thumb { background:rgba(201,168,76,0.3); }
+    .tray-inner {
+      display:flex; align-items:center;
+      height:100%; padding:0 10px;
+      width:max-content;
+    }
+
+    /* INDIVIDUAL CARD */
+    .t-card {
+      width:var(--card-w); height:var(--card-h);
+      flex-shrink:0;
+      margin-right:-22px;
+      cursor:pointer; position:relative;
+      transition:transform 0.25s var(--ease),filter 0.25s;
+      transform-origin:bottom center;
+    }
+    .t-card:last-child { margin-right:10px; }
+    .t-card:hover:not(.selected):not(.disabled) {
+      transform:translateY(-38px) scale(1.12);
+      z-index:9999 !important;
+      filter:drop-shadow(0 16px 24px rgba(180,80,255,0.55)) drop-shadow(0 8px 12px rgba(0,0,0,0.6));
+    }
+    .t-card.selected { transform:translateY(-32px) scale(1.08); z-index:5000; pointer-events:none; }
+    .t-card.disabled { opacity:0.2; pointer-events:none; }
+
+    /* 3D FLIP */
+    .card-inner {
+      width:100%; height:100%; position:relative;
+      transform-style:preserve-3d;
+      transition:transform 0.7s cubic-bezier(0.645,0.045,0.355,1);
+    }
+    .card-inner.flipped { transform:rotateY(180deg); }
+
+    .card-face, .card-back {
+      position:absolute; width:100%; height:100%;
+      backface-visibility:hidden; border-radius:10px; overflow:hidden;
+    }
+
+    /* CARD BACK — purple mystic eye */
+    .card-back {
+      background:linear-gradient(145deg,#a855f7 0%,#9333ea 45%,#7e22ce 100%);
+      border:3px solid #1a0030;
+      display:flex; align-items:center; justify-content:center;
+      box-shadow:0 6px 20px rgba(0,0,0,0.6),inset 0 1px 0 rgba(255,255,255,0.1);
+    }
+    .card-back::before {
+      content:''; position:absolute; inset:5px;
+      border-radius:7px; border:1px solid rgba(0,0,0,0.35); pointer-events:none;
+    }
+    .eye-wrap { width:72%; height:72%; display:flex; align-items:center; justify-content:center; position:relative; z-index:1; }
+    .eye-wrap svg { width:100%; height:100%; overflow:visible; }
+
+    /* CARD FACE — image fills the card */
+    .card-face {
+      transform:rotateY(180deg);
+      background:var(--navy-mid);
+      border:2px solid rgba(201,168,76,0.5);
+      box-shadow:0 6px 20px rgba(0,0,0,0.5);
+      display:flex; flex-direction:column;
+      align-items:center; justify-content:flex-end;
+      padding:0; overflow:hidden;
+    }
+
+    /* The actual card image — fills full card face, 9:16 cropped to fit */
+    .card-img {
+      position:absolute; inset:0;
+      width:100%; height:100%;
+      object-fit:cover;
+      object-position:center top;
+      border-radius:8px;
+    }
+
+    /* Fallback when no image — shows symbol/name */
+    .card-fallback {
+      position:absolute; inset:0;
+      display:flex; flex-direction:column;
+      align-items:center; justify-content:center;
+      padding:0.4rem; text-align:center;
+      background:linear-gradient(155deg,var(--navy-light),var(--navy));
+    }
+    .cf-num  { font-family:var(--fs); font-size:0.55rem; color:var(--gold); letter-spacing:0.2em; margin-bottom:0.2rem; }
+    .cf-sym  { font-size:1.55rem; margin-bottom:0.2rem; line-height:1; }
+    .cf-name { font-family:var(--fs); font-size:0.4rem; color:var(--gold-light); text-transform:uppercase; letter-spacing:0.08em; line-height:1.3; }
+
+    /* Gold name overlay at bottom of card image */
+    .card-name-overlay {
+      position:absolute; bottom:0; left:0; right:0;
+      background:linear-gradient(to top,rgba(5,7,26,0.92) 0%,rgba(5,7,26,0.6) 60%,transparent 100%);
+      padding:0.6rem 0.3rem 0.3rem;
+      text-align:center; z-index:2;
+      border-radius:0 0 8px 8px;
+    }
+    .card-name-overlay span {
+      font-family:var(--fs); font-size:0.38rem;
+      color:var(--gold-light); letter-spacing:0.08em;
+      text-transform:uppercase; line-height:1.2; display:block;
+    }
+    /* Hide overlay when fallback is shown */
+    .card-face.has-image .card-fallback { display:none; }
+    .card-face:not(.has-image) .card-name-overlay { display:none; }
+    .card-face:not(.has-image) .card-img { display:none; }
+
+    /* Reversed overlay */
+    .card-face.reversed .card-img { transform:rotate(180deg); }
+
+    /* Gold glow on selected */
+    .t-card.selected .card-back { border-color:var(--gold); box-shadow:0 0 24px var(--glow),0 8px 30px rgba(0,0,0,0.5); }
+    .t-card.selected .card-face { border-color:var(--gold); box-shadow:0 0 24px var(--glow); }
+
+    /* Shuffle wave */
+    @keyframes wave {
+      0%   { transform:translateY(0) rotate(0deg) scale(1); }
+      20%  { transform:translateY(-42px) rotate(-8deg) scale(0.92); }
+      50%  { transform:translateY(-18px) rotate(6deg) scale(0.96); }
+      75%  { transform:translateY(-30px) rotate(-3deg) scale(0.94); }
+      100% { transform:translateY(0) rotate(0deg) scale(1); }
+    }
+    .t-card.wave-anim { animation:wave 0.52s var(--ease) both; }
+
+    /* SHUFFLE BTN */
+    .shuffle-row { display:flex; justify-content:center; margin-top:1.4rem; animation:slideUp 0.8s 0.78s var(--ease) both; }
+    .shuffle-btn {
+      font-family:var(--fs); font-size:0.85rem; letter-spacing:0.18em; text-transform:uppercase;
+      background:rgba(200,200,200,0.13); border:1px solid rgba(180,180,180,0.3);
+      color:var(--white-dim); padding:0.85rem 3rem; border-radius:14px;
+      cursor:pointer; display:flex; align-items:center; gap:0.75rem; transition:all 0.32s; backdrop-filter:blur(6px);
+    }
+    .shuffle-btn:hover { background:rgba(201,168,76,0.12); border-color:var(--gold); color:var(--gold-light); transform:translateY(-2px); box-shadow:0 6px 22px rgba(201,168,76,0.15); }
+    .shuffle-btn:active { transform:translateY(0); }
+    .shuffle-btn.busy { pointer-events:none; opacity:0.6; }
+    .s-icon { font-size:1.1rem; display:inline-block; }
+    .shuffle-btn.busy .s-icon { animation:spin 0.5s linear infinite; }
+    @keyframes spin { to { transform:rotate(360deg); } }
+
+    /* SLOTS */
+    .slots-section { max-width:900px; margin:0 auto; padding:2rem 2rem 0; animation:slideUp 0.8s 0.92s var(--ease) both; }
+    .progress-txt { font-family:var(--fs); font-size:0.75rem; letter-spacing:0.25em; text-transform:uppercase; color:var(--gold); text-align:center; margin-bottom:1.3rem; }
+    .slots-row { display:flex; gap:1.3rem; flex-wrap:wrap; justify-content:center; }
+    .slot {
+      width:100px; height:158px;
+      border:1px dashed rgba(201,168,76,0.3); border-radius:8px;
+      display:flex; align-items:center; justify-content:center;
+      transition:border-color 0.4s,box-shadow 0.4s; overflow:hidden;
+    }
+    .slot.filled { border-style:solid; border-color:var(--gold); box-shadow:0 0 22px var(--glow),inset 0 0 18px rgba(201,168,76,0.04); }
+    .slot-lbl { font-family:var(--fs); font-size:0.5rem; color:rgba(201,168,76,0.38); letter-spacing:0.14em; text-transform:uppercase; text-align:center; padding:0.5rem; }
+
+    /* Slot preview — full image like card face */
+    .slot-preview {
+      width:100%; height:100%; border-radius:7px;
+      position:relative; overflow:hidden;
+      background:linear-gradient(155deg,var(--navy-light),var(--navy));
+      display:flex; flex-direction:column; align-items:center; justify-content:center;
+    }
+    .slot-preview .slot-img {
+      position:absolute; inset:0; width:100%; height:100%;
+      object-fit:cover; object-position:center top; border-radius:7px;
+    }
+    .slot-preview.reversed .slot-img { transform:rotate(180deg); }
+    .slot-preview .slot-overlay {
+      position:absolute; bottom:0; left:0; right:0;
+      background:linear-gradient(to top,rgba(5,7,26,0.95) 0%,rgba(5,7,26,0.5) 60%,transparent 100%);
+      padding:0.5rem 0.3rem 0.3rem; text-align:center; z-index:2;
+    }
+    .slot-preview .slot-overlay span { font-family:var(--fs); font-size:0.42rem; color:var(--gold-light); text-transform:uppercase; letter-spacing:0.08em; line-height:1.2; display:block; }
+    /* Fallback slot (no image) */
+    .slot-fallback { display:flex; flex-direction:column; align-items:center; justify-content:center; padding:0.5rem; text-align:center; }
+    .sp-num { font-family:var(--fs); font-size:0.58rem; color:var(--gold); letter-spacing:0.15em; }
+    .sp-sym { font-size:2rem; margin:0.3rem 0; line-height:1; }
+    .sp-name { font-family:var(--fs); font-size:0.48rem; color:var(--gold-light); text-transform:uppercase; letter-spacing:0.08em; line-height:1.3; }
+
+    /* REVEAL */
+    .reveal-wrap { text-align:center; margin:2rem 0 5rem; display:none; }
+    .reveal-wrap.show { display:block; animation:slideUp 0.5s ease; }
+    .reveal-btn { display:inline-block; font-family:var(--fs); font-size:0.88rem; letter-spacing:0.22em; text-transform:uppercase; color:var(--gold); border:1px solid var(--gold); padding:1.1rem 3.2rem; cursor:pointer; background:transparent; clip-path:polygon(14px 0%,100% 0%,calc(100% - 14px) 100%,0% 100%); position:relative; overflow:hidden; transition:color 0.4s; }
+    .reveal-btn::before { content:''; position:absolute; inset:0; background:var(--gold); transform:translateX(-105%); transition:transform 0.4s var(--ease); z-index:-1; }
+    .reveal-btn:hover { color:var(--midnight); }
+    .reveal-btn:hover::before { transform:translateX(0); }
+
+    @media(max-width:680px){
+      
+      :root{--card-w:68px;--card-h:108px;}
+      .t-card{margin-right:-16px;}
+      .rail{width:26px;height:160px;}
+      .tray-track{height:160px;}
+    }
+    @media(max-width:420px){
+      :root{--card-w:56px;--card-h:88px;}
+      .t-card{margin-right:-12px;}
+      .rail{width:20px;height:140px;}
+      .tray-track{height:140px;}
+    }
+  
+    /* ═══════════════════════════════════════
+       GOOGLE ADS SYSTEM
+       ═══════════════════════════════════════ */
+
+    /* ── FIXED RIGHT SIDEBAR (desktop ≥1100px) ── */
+    .ad-sidebar-fixed { display: none; }
+
+    @media (min-width: 1100px) {
+      .ad-sidebar-fixed {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: fixed;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        width: 160px;
+        z-index: 90;
+      }
+      .ad-sidebar-inner {
+        width: 160px;
+        min-height: 600px;
+        background: rgba(8,12,42,0.7);
+        border-left: 1px solid rgba(201,168,76,0.1);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0.5rem 0;
+      }
+      body.has-sidebar { margin-right: 164px; }
+    }
+    @media (min-width: 1400px) {
+      .ad-sidebar-fixed { width: 300px; }
+      .ad-sidebar-inner { width: 300px; }
+      body.has-sidebar { margin-right: 304px; }
+    }
+
+    .ad-sidebar-label,
+    .ad-mid-label,
+    .ad-sticky-label {
+      font-family: 'Cinzel', serif;
+      font-size: 0.42rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(201,168,76,0.22);
+      text-align: center;
+      display: block;
+      width: 100%;
+      padding: 3px 0 2px;
+    }
+
+    /* ── MID-CONTENT (auto responsive) ── */
+    .ad-mid-wrap {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 2rem 0;
+    }
+
+    /* ── STICKY BOTTOM (mobile + tablet, hidden on desktop) ── */
+    .ad-sticky-bottom { display: none; }
+
+    @media (max-width: 1099px) {
+      .ad-sticky-bottom {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        bottom: 0; left: 0; right: 0;
+        z-index: 9999;
+        background: rgba(5,7,26,0.97);
+        border-top: 1px solid rgba(201,168,76,0.18);
+        padding-bottom: env(safe-area-inset-bottom, 0px);
+        min-height: 62px;
+      }
+      .ad-sticky-close {
+        position: absolute; top: 3px; right: 8px;
+        background: none; border: none;
+        color: rgba(201,168,76,0.28);
+        font-size: 0.75rem; cursor: pointer;
+        padding: 2px 5px; line-height: 1;
+        transition: color 0.2s;
+      }
+      .ad-sticky-close:hover { color: rgba(201,168,76,0.65); }
+      body { padding-bottom: 68px !important; }
+    }
+
+  
+    /* ══════════════════════════════════════
+       NAVBAR — desktop + hamburger mobile
+       ══════════════════════════════════════ */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      padding: 0 2.5rem;
+      height: 62px;
+      display: flex; align-items: center; justify-content: space-between;
+      background: rgba(5,7,26,0.97);
+      border-bottom: 1px solid rgba(201,168,76,0.1);
+      backdrop-filter: blur(8px);
+    }
+    .nav-brand {
+      font-family: var(--fd); font-size: 0.9rem; color: var(--gold);
+      text-decoration: none; letter-spacing: 0.05em;
+      text-shadow: 0 0 22px var(--glow); white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .nav-brand:hover { text-shadow: 0 0 38px rgba(201,168,76,0.7); }
+
+    /* Desktop links */
+    .nav-links {
+      display: flex; align-items: center;
+      gap: 0; list-style: none; margin: 0; padding: 0;
+    }
+    .nav-links li a {
+      font-family: var(--fs); font-size: 0.62rem; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--white-dim);
+      text-decoration: none; padding: 0 1rem; line-height: 62px;
+      display: block; transition: color 0.25s; white-space: nowrap;
+      position: relative;
+    }
+    .nav-links li a::after {
+      content: ''; position: absolute; bottom: 0; left: 1rem; right: 1rem;
+      height: 2px; background: var(--gold);
+      transform: scaleX(0); transition: transform 0.25s; transform-origin: center;
+    }
+    .nav-links li a:hover { color: var(--gold-light); }
+    .nav-links li a:hover::after { transform: scaleX(1); }
+    .nav-links li a.nav-active { color: var(--gold); }
+    .nav-links li a.nav-active::after { transform: scaleX(1); }
+
+    /* Hamburger button — hidden on desktop */
+    .nav-hamburger {
+      display: none; flex-direction: column; justify-content: center;
+      gap: 5px; background: none; border: none; cursor: pointer;
+      padding: 8px; margin-right: -8px; z-index: 210;
+    }
+    .nav-hamburger span {
+      display: block; width: 24px; height: 2px;
+      background: var(--gold); border-radius: 2px;
+      transition: transform 0.3s, opacity 0.3s, width 0.3s;
+      transform-origin: center;
+    }
+    /* Hamburger → X animation */
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; width: 0; }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* Mobile drawer */
+    .nav-drawer {
+      display: none; /* always hidden on desktop */
+    }
+
+    /* ── MOBILE ── */
+    @media (max-width: 900px) {
+      nav { padding: 0 1.4rem; }
+      .nav-links { display: none; } /* hide desktop links */
+      .nav-hamburger { display: flex; }
+
+      .nav-drawer {
+        display: block;
+        position: fixed; top: 62px; left: 0; right: 0; bottom: 0;
+        background: rgba(5,7,26,0.99);
+        border-top: 1px solid rgba(201,168,76,0.12);
+        z-index: 199;
+        transform: translateX(100%);
+        transition: transform 0.35s cubic-bezier(0.25,0.46,0.45,0.94);
+        overflow-y: auto;
+        padding: 1.5rem 0 2rem;
+      }
+      .nav-drawer.open {
+        transform: translateX(0);
+      }
+      .nav-drawer ul {
+        list-style: none; margin: 0; padding: 0;
+      }
+      .nav-drawer ul li {
+        border-bottom: 1px solid rgba(201,168,76,0.07);
+      }
+      .nav-drawer ul li a {
+        display: flex; align-items: center; gap: 0.8rem;
+        font-family: var(--fs); font-size: 0.78rem; letter-spacing: 0.18em;
+        text-transform: uppercase; color: var(--white-dim); text-decoration: none;
+        padding: 1.1rem 1.8rem; transition: color 0.2s, background 0.2s;
+      }
+      .nav-drawer ul li a .nav-icon { font-size: 1.1rem; width: 24px; text-align: center; }
+      .nav-drawer ul li a:hover,
+      .nav-drawer ul li a.nav-active {
+        color: var(--gold); background: rgba(201,168,76,0.06);
+      }
+      .nav-drawer-brand {
+        font-family: var(--fd); font-size: 1rem; color: var(--gold);
+        text-align: center; padding: 0.5rem 0 1.5rem;
+        text-shadow: 0 0 22px var(--glow); letter-spacing: 0.05em;
+        display: block;
+      }
+      /* Dim overlay behind drawer */
+      .nav-overlay {
+        display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5);
+        z-index: 198; top: 62px;
+      }
+      .nav-overlay.open { display: block; }
+    }
+    /* On tablet (900-1100) still show hamburger */
+    @media (min-width: 901px) {
+      .nav-hamburger { display: none; }
+      .nav-drawer { display: none !important; }
+      .nav-overlay { display: none !important; }
+    }
+
+  </style>
+</head>
+<body>
+<canvas id="starCanvas"></canvas>
+
+<nav>
+  <a href="index.html" class="nav-brand">✦ Tarot's Whisper</a>
+
+  <!-- Desktop links -->
+  <ul class="nav-links">
+    <li><a href="daily.html">Daily Card</a></li>
+    <li><a href="library.html">Card Library</a></li>
+    <li><a href="dream.html">Dream Journal</a></li>
+    <li><a href="tools.html">Tools</a></li>
+    <li><a href="stats.html">Insights</a></li>
+    <li><a href="history.html">My Readings</a></li>
+  </ul>
+
+  <!-- Hamburger button (mobile) -->
+  <button class="nav-hamburger" id="navHamburger" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Mobile drawer -->
+<div class="nav-drawer" id="navDrawer" role="navigation" aria-label="Mobile menu">
+  <a href="index.html" class="nav-drawer-brand">✦ Tarot's Whisper</a>
+  <ul>
+    <li><a href="daily.html"><span class="nav-icon">☽</span>Daily Card</a></li>
+    <li><a href="library.html"><span class="nav-icon">📚</span>Card Library</a></li>
+    <li><a href="dream.html"><span class="nav-icon">🌙</span>Dream Journal</a></li>
+    <li><a href="tools.html"><span class="nav-icon">✦</span>Tools</a></li>
+    <li><a href="stats.html"><span class="nav-icon">◈</span>Insights</a></li>
+    <li><a href="history.html"><span class="nav-icon">📖</span>My Readings</a></li>
+  </ul>
+</div>
+<div class="nav-overlay" id="navOverlay"></div>
+
+<div class="page">
+  <div class="sel-head">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a> &nbsp;✦&nbsp;
+      <a href="#" id="catLink"></a> &nbsp;✦&nbsp; Select Cards
+    </div>
+    <h1 class="sel-title">Choose Your Cards</h1>
+    <p class="sel-sub">Select <strong id="reqCount"></strong> card<span id="plural"></span> — scroll, feel, and choose</p>
+  </div>
+
+  <div class="q-wrap">
+    <label class="q-label" for="userQ">Ask your question (optional)</label>
+    <textarea id="userQ" class="q-input" placeholder="What guidance do you seek? Speak your question to the cards..."></textarea>
+  </div>
+
+  <div class="tray-section">
+    <div class="deck-assembly">
+      <div class="rail rail-left"></div>
+      <div class="tray-track" id="trayTrack">
+        <div class="tray-inner" id="trayInner"></div>
+      </div>
+      <div class="rail rail-right"></div>
+    </div>
+    <div class="shuffle-row">
+      <button class="shuffle-btn" id="shuffleBtn">
+        <span class="s-icon">🔀</span>
+        <span>Shuffle</span>
+      </button>
+    </div>
+  </div>
+
+  
+        <!-- ══ MID-CONTENT AD ══ -->
+        <div class="ad-mid-wrap">
+          <span class="ad-mid-label">Advertisement</span>
+          <ins class="adsbygoogle"
+               style="display:block"
+               data-ad-client="ca-pub-XXXXXXXXXX"
+               data-ad-slot="XXXXXXXXXX"
+               data-ad-format="auto"
+               data-full-width-responsive="true"></ins>
+          <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+        </div>
+        <div class="slots-section">
+    <p class="progress-txt" id="progTxt">0 of <span id="progReq"></span> chosen</p>
+    <div class="slots-row" id="slotsRow"></div>
+  </div>
+
+  
+        <!-- ══ MID-CONTENT AD ══ -->
+        <div class="ad-mid-wrap">
+          <span class="ad-mid-label">Advertisement</span>
+          <ins class="adsbygoogle"
+               style="display:block"
+               data-ad-client="ca-pub-XXXXXXXXXX"
+               data-ad-slot="XXXXXXXXXX"
+               data-ad-format="auto"
+               data-full-width-responsive="true"></ins>
+          <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+        </div>
+        <div class="reveal-wrap" id="revealWrap">
+    <button class="reveal-btn" id="revealBtn">Reveal My Interpretation ✦</button>
+  </div>
+</div>
+
+<script>
+/* ── STAR CANVAS ── */
+(function(){
+  const c=document.getElementById('starCanvas'),ctx=c.getContext('2d');
+  let W,H,stars=[],lines=[];
+  function resize(){W=c.width=innerWidth;H=c.height=innerHeight;}
+  function build(){
+    stars=[];
+    for(let i=0;i<~~(W*H/2800);i++)
+      stars.push({x:Math.random()*W,y:Math.random()*H,r:Math.random()*1.4+0.25,
+        a:Math.random()*0.7+0.3,da:(Math.random()*0.015+0.004)*(Math.random()<.5?1:-1),gold:Math.random()<.07});
+    lines=[];
+    for(let i=0;i<8;i++){
+      const a=stars[~~(Math.random()*stars.length)],b=stars[~~(Math.random()*stars.length)];
+      if(Math.hypot(b.x-a.x,b.y-a.y)<180)lines.push([a,b]);
+    }
+  }
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    lines.forEach(([a,b])=>{ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.strokeStyle='rgba(201,168,76,0.07)';ctx.lineWidth=0.6;ctx.stroke();});
+    stars.forEach(s=>{
+      s.a+=s.da;if(s.a>1){s.a=1;s.da=-Math.abs(s.da);}if(s.a<.1){s.a=.1;s.da=Math.abs(s.da);}
+      ctx.beginPath();
+      if(s.gold){const g=ctx.createRadialGradient(s.x,s.y,0,s.x,s.y,s.r*5);g.addColorStop(0,`rgba(201,168,76,${s.a})`);g.addColorStop(1,'rgba(201,168,76,0)');ctx.arc(s.x,s.y,s.r*5,0,Math.PI*2);ctx.fillStyle=g;}
+      else{ctx.arc(s.x,s.y,s.r,0,Math.PI*2);ctx.fillStyle=`rgba(200,220,255,${s.a*.65})`;}
+      ctx.fill();
+    });
+    requestAnimationFrame(draw);
+  }
+  resize();build();draw();
+  window.addEventListener('resize',()=>{resize();build();});
+})();
+
+/* ── PAGE TRANSITIONS ── */
+function go(href){
+  document.body.style.transition='opacity 0.35s ease';
+  document.body.style.opacity='0';
+  setTimeout(()=>location.href=href,350);
+}
+document.querySelectorAll('a[href]').forEach(a=>{
+  const h=a.getAttribute('href');
+  if(!h||h.startsWith('#'))return;
+  a.addEventListener('click',e=>{if(e.ctrlKey||e.metaKey)return;e.preventDefault();go(h);});
+});
+
+/* ══════════════════════════════════════════════
+   IMAGE FILENAME MAPPING
+   Folder: cards/
+   Filenames exactly match your pattern:
+     Major: "0 — The Fool.png"  "X — Wheel of Fortune.png"
+     Minor: "4 of Wands.png"    "Ace of Cups.png"
+══════════════════════════════════════════════ */
+const IMG_FOLDER = 'cards/'; // ← change this if your folder is named differently
+
+function getImagePath(card) {
+  // Major Arcana: "0 — The Fool.png", "X — Wheel of Fortune.png"
+  if (card.arc === 'Major') {
+    return `${IMG_FOLDER}${card.num} — ${card.name}.png`;
+  }
+  // Minor Arcana: "4 of Wands.png", "Ace of Cups.png", "King of Swords.png"
+  return `${IMG_FOLDER}${card.name}.png`;
+}
+
+/* Test if image actually exists, return promise resolving to true/false */
+function imageExists(src) {
+  return new Promise(resolve => {
+    const img = new Image();
+    img.onload  = () => resolve(true);
+    img.onerror = () => resolve(false);
+    img.src = src;
+  });
+}
+
+/* ── 78-CARD DECK ── */
+const MAJOR=[
+  {id:0, name:"The Fool",         num:"0",    arc:"Major"},
+  {id:1, name:"The Magician",     num:"I",    arc:"Major"},
+  {id:2, name:"The High Priestess",num:"II",  arc:"Major"},
+  {id:3, name:"The Empress",      num:"III",  arc:"Major"},
+  {id:4, name:"The Emperor",      num:"IV",   arc:"Major"},
+  {id:5, name:"The Hierophant",   num:"V",    arc:"Major"},
+  {id:6, name:"The Lovers",       num:"VI",   arc:"Major"},
+  {id:7, name:"The Chariot",      num:"VII",  arc:"Major"},
+  {id:8, name:"Strength",         num:"VIII", arc:"Major"},
+  {id:9, name:"The Hermit",       num:"IX",   arc:"Major"},
+  {id:10,name:"Wheel of Fortune", num:"X",    arc:"Major"},
+  {id:11,name:"Justice",          num:"XI",   arc:"Major"},
+  {id:12,name:"The Hanged Man",   num:"XII",  arc:"Major"},
+  {id:13,name:"Death",            num:"XIII", arc:"Major"},
+  {id:14,name:"Temperance",       num:"XIV",  arc:"Major"},
+  {id:15,name:"The Devil",        num:"XV",   arc:"Major"},
+  {id:16,name:"The Tower",        num:"XVI",  arc:"Major"},
+  {id:17,name:"The Star",         num:"XVII", arc:"Major"},
+  {id:18,name:"The Moon",         num:"XVIII",arc:"Major"},
+  {id:19,name:"The Sun",          num:"XIX",  arc:"Major"},
+  {id:20,name:"Judgement",        num:"XX",   arc:"Major"},
+  {id:21,name:"The World",        num:"XXI",  arc:"Major"},
+];
+const SUITS=[
+  {name:"Wands",    sym:"🔥"},
+  {name:"Cups",     sym:"🌊"},
+  {name:"Swords",   sym:"⚔️"},
+  {name:"Pentacles",sym:"⭐"}
+];
+const RANKS=["Ace","2","3","4","5","6","7","8","9","10","Page","Knight","Queen","King"];
+const MINOR=[];
+let mid=22;
+SUITS.forEach(s=>RANKS.forEach((r,ri)=>MINOR.push({
+  id:mid++,
+  name:`${r} of ${s.name}`,
+  num:ri===0?"A":(ri<10?String(ri+1):r.slice(0,2)),
+  arc:"Minor",suit:s.name,sym:s.sym
+})));
+const ALL_CARDS=[...MAJOR,...MINOR];
+
+const MAJOR_SYMS=['☽','✦','⊕','✺','⋈','⊛','♦','⊜','❈','⋄','⊗','⊞','⋅','✧','⊙','☿','✵','⊟','☾','☀','⊖','⊘'];
+function getSymbol(c){return c.suit?c.sym:MAJOR_SYMS[c.id%22];}
+
+/* ── EYE SVG for card backs ── */
+function eyeSVG(){
+  return`<svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+    <g stroke="#b5e548" stroke-width="3.2" stroke-linecap="round">
+      <line x1="40" y1="6"  x2="40" y2="16"/>
+      <line x1="40" y1="64" x2="40" y2="74"/>
+      <line x1="6"  y1="40" x2="16" y2="40"/>
+      <line x1="64" y1="40" x2="74" y2="40"/>
+      <line x1="15" y1="15" x2="22" y2="22"/>
+      <line x1="58" y1="58" x2="65" y2="65"/>
+      <line x1="65" y1="15" x2="58" y2="22"/>
+      <line x1="22" y1="58" x2="15" y2="65"/>
+      <line x1="24" y1="10" x2="27" y2="18"/>
+      <line x1="56" y1="10" x2="53" y2="18"/>
+      <line x1="24" y1="70" x2="27" y2="62"/>
+      <line x1="56" y1="70" x2="53" y2="62"/>
+      <line x1="10" y1="24" x2="18" y2="27"/>
+      <line x1="10" y1="56" x2="18" y2="53"/>
+      <line x1="70" y1="24" x2="62" y2="27"/>
+      <line x1="70" y1="56" x2="62" y2="53"/>
+    </g>
+    <ellipse cx="40" cy="40" rx="24" ry="14" fill="#e91e8c"/>
+    <ellipse cx="40" cy="40" rx="18" ry="10" fill="#b5e548"/>
+    <ellipse cx="40" cy="40" rx="9"  ry="10" fill="#2d0050"/>
+    <ellipse cx="37" cy="37" rx="2.5" ry="2" fill="rgba(255,255,255,0.45)"/>
+  </svg>`;
+}
+
+/* ── URL PARAMS ── */
+const usp=new URLSearchParams(location.search);
+const category=usp.get('category')||'general';
+const required=parseInt(usp.get('count'))||1;
+const catNames={general:'General',career:'Career',relationship:'Relationship',health:'Health',yesno:'Yes or No'};
+document.getElementById('catLink').textContent=catNames[category]||'Reading';
+document.getElementById('catLink').href=`reading-type.html?category=${category}`;
+document.getElementById('reqCount').textContent=required;
+document.getElementById('plural').textContent=required>1?'s':'';
+document.getElementById('progReq').textContent=required;
+
+/* ── DECK STATE ── */
+let deck=[];
+let selected=[];
+
+function shuffleArr(arr){
+  const a=[...arr];
+  for(let i=a.length-1;i>0;i--){const j=~~(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}
+  return a.map(c=>({...c,reversed:Math.random()<.33}));
+}
+
+/* ── RENDER DECK ── */
+function renderDeck(){
+  const inner=document.getElementById('trayInner');
+  inner.innerHTML='';
+  deck.forEach((card,idx)=>{
+    const el=document.createElement('div');
+    el.className='t-card';
+    el.dataset.idx=idx;
+    el.style.zIndex=idx;
+
+    const imgPath=getImagePath(card);
+    const sym=getSymbol(card);
+
+    el.innerHTML=`
+      <div class="card-inner" id="ci-${idx}">
+        <div class="card-back">
+          <div class="eye-wrap">${eyeSVG()}</div>
+        </div>
+        <div class="card-face ${card.reversed?'reversed':''}" id="cf-${idx}">
+          <img class="card-img" src="${imgPath}"
+               alt="${card.name}"
+               onerror="this.parentElement.classList.remove('has-image')">
+          <div class="card-fallback">
+            <span class="cf-num">${card.num}</span>
+            <span class="cf-sym">${sym}</span>
+            <span class="cf-name">${card.name}</span>
+          </div>
+          <div class="card-name-overlay"><span>${card.name}${card.reversed?' ↓':''}</span></div>
+        </div>
+      </div>`;
+
+    /* Mark as has-image optimistically; onerror removes it */
+    const faceEl=el.querySelector('.card-face');
+    faceEl.classList.add('has-image');
+
+    el.addEventListener('click',()=>handleClick(el,idx));
+    inner.appendChild(el);
+  });
+}
+
+/* ── CARD CLICK ── */
+function handleClick(el,idx){
+  if(el.classList.contains('selected')||el.classList.contains('disabled'))return;
+  if(selected.length>=required)return;
+  document.getElementById(`ci-${idx}`).classList.add('flipped');
+  el.classList.add('selected');
+  el.style.zIndex=5000+selected.length;
+  selected.push({...deck[idx],position:selected.length});
+  updateSlots();
+  if(selected.length>=required){
+    document.querySelectorAll('.t-card:not(.selected)').forEach(c=>c.classList.add('disabled'));
+    setTimeout(()=>document.getElementById('revealWrap').classList.add('show'),700);
+  }
+}
+
+/* ── SLOTS ── */
+const POS={1:['Your Present Truth'],3:['Past','Present','Future'],5:['Foundation','Challenge','Hidden','Advice','Outcome']};
+
+function buildSlots(){
+  const row=document.getElementById('slotsRow');
+  const labels=POS[required]||Array.from({length:required},(_,i)=>`Card ${i+1}`);
+  row.innerHTML=labels.map((l,i)=>`<div class="slot" id="slot-${i}"><span class="slot-lbl">${l}</span></div>`).join('');
+}
+
+function updateSlots(){
+  selected.forEach((card,idx)=>{
+    const sl=document.getElementById(`slot-${idx}`);
+    if(!sl)return;
+    sl.classList.add('filled');
+    const imgPath=getImagePath(card);
+    const sym=getSymbol(card);
+    sl.innerHTML=`
+      <div class="slot-preview ${card.reversed?'reversed':''}">
+        <img class="slot-img" src="${imgPath}" alt="${card.name}"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="slot-fallback" style="display:none">
+          <span class="sp-num">${card.num}</span>
+          <span class="sp-sym">${sym}</span>
+          <span class="sp-name">${card.name}${card.reversed?'<br>↓':''}</span>
+        </div>
+        <div class="slot-overlay"><span>${card.name}${card.reversed?' ↓':''}</span></div>
+      </div>`;
+  });
+  document.getElementById('progTxt').innerHTML=`${selected.length} of <span>${required}</span> chosen`;
+}
+
+/* ── SHUFFLE ── */
+function doShuffle(){
+  if(selected.length>0)return;
+  const btn=document.getElementById('shuffleBtn');
+  btn.classList.add('busy');
+  document.querySelectorAll('.t-card').forEach((c,i)=>{
+    setTimeout(()=>{
+      c.classList.add('wave-anim');
+      setTimeout(()=>c.classList.remove('wave-anim'),540);
+    },i*7);
+  });
+  setTimeout(()=>{
+    deck=shuffleArr(ALL_CARDS);
+    renderDeck();
+    btn.classList.remove('busy');
+  },78*7+300);
+}
+document.getElementById('shuffleBtn').addEventListener('click',doShuffle);
+
+/* ── DRAG-TO-SCROLL ── */
+(function(){
+  const track=document.getElementById('trayTrack');
+  let down=false,startX,scrollLeft;
+  track.addEventListener('mousedown',e=>{down=true;startX=e.pageX-track.offsetLeft;scrollLeft=track.scrollLeft;track.style.cursor='grabbing';});
+  track.addEventListener('mouseleave',()=>{down=false;track.style.cursor='grab';});
+  track.addEventListener('mouseup',()=>{down=false;track.style.cursor='grab';});
+  track.addEventListener('mousemove',e=>{if(!down)return;e.preventDefault();track.scrollLeft=scrollLeft-(e.pageX-track.offsetLeft-startX)*1.6;});
+  let tx,ts;
+  track.addEventListener('touchstart',e=>{tx=e.touches[0].pageX-track.offsetLeft;ts=track.scrollLeft;},{passive:true});
+  track.addEventListener('touchmove',e=>{track.scrollLeft=ts-(e.touches[0].pageX-track.offsetLeft-tx)*1.6;},{passive:true});
+})();
+
+/* ── REVEAL ── */
+document.getElementById('revealBtn').addEventListener('click',()=>{
+  const question=document.getElementById('userQ').value.trim();
+  const cardParam=selected.map(c=>c.id+(c.reversed?'r':'u')).join(',');
+  const hist=JSON.parse(localStorage.getItem('tarotHistory')||'[]');
+  hist.unshift({category,cardCount:required,cardNames:selected.map(c=>c.name).join(', '),question,date:new Date().toISOString()});
+  if(hist.length>20)hist.pop();
+  localStorage.setItem('tarotHistory',JSON.stringify(hist));
+  const p=new URLSearchParams({cards:cardParam,category,count:required});
+  if(question)p.set('question',encodeURIComponent(question));
+  go(`result.html?${p}`);
+});
+
+/* ── INIT ── */
+deck=shuffleArr(ALL_CARDS);
+renderDeck();
+buildSlots();
+</script>
+
+  <script>document.body.classList.add('has-sidebar');</script>
+
+  <!-- ══ FIXED SIDEBAR AD — desktop right column ══ -->
+  <div class="ad-sidebar-fixed">
+    <div class="ad-sidebar-inner">
+      <span class="ad-sidebar-label">Advertisement</span>
+      <ins class="adsbygoogle"
+           style="display:block;width:160px;height:600px"
+           data-ad-client="ca-pub-XXXXXXXXXX"
+           data-ad-slot="XXXXXXXXXX"></ins>
+      <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+    </div>
+  </div>
+
+  <!-- ══ STICKY BOTTOM AD — mobile/tablet ══ -->
+  <div class="ad-sticky-bottom" id="adStickyBottom">
+    <button class="ad-sticky-close"
+      onclick="document.getElementById('adStickyBottom').style.display='none';document.body.style.removeProperty('padding-bottom')"
+      aria-label="Close ad">✕</button>
+    <span class="ad-sticky-label">Advertisement</span>
+    <ins class="adsbygoogle"
+         style="display:block;width:320px;height:50px"
+         data-ad-client="ca-pub-XXXXXXXXXX"
+         data-ad-slot="XXXXXXXXXX"></ins>
+    <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+  </div>
+
+  <script>
+  /* ── HAMBURGER NAV ── */
+  (function(){
+    const btn   = document.getElementById('navHamburger');
+    const drawer= document.getElementById('navDrawer');
+    const overlay=document.getElementById('navOverlay');
+    if(!btn) return;
+
+    function openMenu(){
+      btn.classList.add('open');
+      drawer.classList.add('open');
+      overlay.classList.add('open');
+      btn.setAttribute('aria-expanded','true');
+      document.body.style.overflow='hidden';
+    }
+    function closeMenu(){
+      btn.classList.remove('open');
+      drawer.classList.remove('open');
+      overlay.classList.remove('open');
+      btn.setAttribute('aria-expanded','false');
+      document.body.style.overflow='';
+    }
+    btn.addEventListener('click',()=> btn.classList.contains('open') ? closeMenu() : openMenu());
+    overlay.addEventListener('click', closeMenu);
+
+    /* Close on any drawer link click */
+    drawer.querySelectorAll('a[href]').forEach(a=>{
+      a.addEventListener('click', ()=>{ closeMenu(); });
+    });
+
+    /* Mark active page */
+    const page = location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('.nav-links a, .nav-drawer a[href]').forEach(a=>{
+      if(a.getAttribute('href') === page) a.classList.add('nav-active');
+    });
+
+    /* Close drawer on resize to desktop */
+    window.addEventListener('resize',()=>{ if(window.innerWidth>900) closeMenu(); });
+
+    /* Escape key closes */
+    document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeMenu(); });
+  })();
+  </script>
+</body>
+</html>

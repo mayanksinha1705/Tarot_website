@@ -1,0 +1,1725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- ══ SEO: PRIMARY ══ -->
+  <title>Your Tarot Reading Results & Card Interpretations | Tarot's Whisper</title>
+  <meta name="description" content="Your personalised tarot reading with detailed card interpretations. Upright and reversed meanings for General, Career, Love, Health and Yes/No spreads across all 78 cards.">
+  <meta name="keywords" content="tarot reading results, tarot card interpretation, tarot reading online, personal tarot meaning, tarot card upright reversed">
+  <meta name="author" content="Tarot's Whisper">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://tarotswhisper.com/result.html">
+
+  <!-- ══ SEO: OPEN GRAPH ══ -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tarotswhisper.com/result.html">
+  <meta property="og:title" content="Your Personal Tarot Reading | Tarot's Whisper">
+  <meta property="og:description" content="Your tarot cards have been drawn. Read your personalised interpretation for every card in your spread.">
+  <meta property="og:image" content="https://tarotswhisper.com/og-preview.jpg">
+  <meta property="og:site_name" content="Tarot's Whisper">
+
+  <!-- ══ SEO: TWITTER CARD ══ -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Your Personal Tarot Reading | Tarot's Whisper">
+  <meta name="twitter:description" content="Your tarot cards have been drawn. Read your personalised interpretation for every card in your spread.">
+  <meta name="twitter:image" content="https://tarotswhisper.com/og-preview.jpg">
+
+  <!-- ══ SEO: STRUCTURED DATA ══ -->
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Tarot Reading Results","description":"Personalised tarot card interpretations for your selected spread and reading category.","url":"https://tarotswhisper.com/result.html","isPartOf":{"@type":"WebSite","name":"Tarot's Whisper","url":"https://tarotswhisper.com"},"breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://tarotswhisper.com/"},{"@type":"ListItem","position":2,"name":"Your Reading","item":"https://tarotswhisper.com/result.html"}]}}</script>
+
+  <!-- ══ ADS: GOOGLE ADSENSE ══ -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXX" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Cinzel+Decorative:wght@400;700&family=EB+Garamond:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --midnight: #05071a;
+      --navy: #080c2a;
+      --navy-mid: #0d1240;
+      --navy-light: #131a52;
+      --gold: #c9a84c;
+      --gold-light: #e2c97e;
+      --gold-pale: #f5e6c0;
+      --gold-dim: rgba(201,168,76,0.55);
+      --glow: rgba(201,168,76,0.35);
+      --white: #f8f4ee;
+      --white-dim: rgba(248,244,238,0.72);
+      --fd: 'Cinzel Decorative', serif;
+      --fs: 'Cormorant Garamond', serif;
+      --fb: 'EB Garamond', serif;
+      --ease: cubic-bezier(0.19, 1, 0.22, 1);
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--midnight);
+      color: var(--white);
+      font-family: var(--fb);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ── STAR CANVAS ── */
+    #starCanvas {
+      position: fixed; inset: 0; z-index: 0;
+      pointer-events: none;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      padding: 0 2.5rem; height: 62px;
+      display: flex; align-items: center; justify-content: space-between;
+      background: rgba(5,7,26,0.97);
+      border-bottom: 1px solid rgba(201,168,76,0.12);
+      backdrop-filter: blur(10px);
+    }
+    .nav-brand {
+      font-family: var(--fd); font-size: 0.82rem; color: var(--gold);
+      text-decoration: none; letter-spacing: 0.05em;
+      text-shadow: 0 0 22px var(--glow); white-space: nowrap; flex-shrink: 0;
+    }
+    .nav-links { display: flex; align-items: center; list-style: none; margin: 0; padding: 0; }
+    .nav-links li a {
+      font-family: var(--fs); font-size: 0.62rem; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--white-dim); text-decoration: none;
+      padding: 0 0.85rem; line-height: 62px; display: block;
+      transition: color 0.25s; white-space: nowrap; position: relative;
+    }
+    .nav-links li a::after {
+      content: ''; position: absolute; bottom: 0; left: 0.85rem; right: 0.85rem;
+      height: 2px; background: var(--gold); transform: scaleX(0);
+      transition: transform 0.25s; transform-origin: center;
+    }
+    .nav-links li a:hover { color: var(--gold-light); }
+    .nav-links li a:hover::after, .nav-links li a.nav-active::after { transform: scaleX(1); }
+    .nav-links li a.nav-active { color: var(--gold); }
+    .nav-hamburger {
+      display: none; flex-direction: column; justify-content: center;
+      gap: 5px; background: none; border: none; cursor: pointer;
+      padding: 8px; margin-right: -8px;
+    }
+    .nav-hamburger span {
+      display: block; width: 24px; height: 2px; background: var(--gold);
+      border-radius: 2px; transition: transform 0.3s, opacity 0.3s, width 0.3s;
+      transform-origin: center;
+    }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; width: 0; }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .nav-drawer {
+      position: fixed; top: 62px; left: 0; right: 0; bottom: 0;
+      background: rgba(5,7,26,0.99); border-top: 1px solid rgba(201,168,76,0.12);
+      z-index: 199; transform: translateX(100%);
+      transition: transform 0.35s cubic-bezier(0.25,0.46,0.45,0.94);
+      overflow-y: auto; padding: 1.5rem 0 2rem; display: none;
+    }
+    .nav-drawer.open { transform: translateX(0); }
+    .nav-drawer ul { list-style: none; margin: 0; padding: 0; }
+    .nav-drawer ul li { border-bottom: 1px solid rgba(201,168,76,0.07); }
+    .nav-drawer ul li a {
+      display: flex; align-items: center; gap: 0.8rem;
+      font-family: var(--fs); font-size: 0.78rem; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--white-dim); text-decoration: none;
+      padding: 1.1rem 1.8rem; transition: color 0.2s, background 0.2s;
+    }
+    .nav-drawer ul li a:hover, .nav-drawer ul li a.nav-active {
+      color: var(--gold); background: rgba(201,168,76,0.06);
+    }
+    .nav-drawer-brand {
+      font-family: var(--fd); font-size: 1rem; color: var(--gold);
+      text-align: center; padding: 0.5rem 0 1.5rem;
+      text-shadow: 0 0 22px var(--glow); letter-spacing: 0.05em; display: block;
+    }
+    .nav-overlay {
+      display: none; position: fixed; inset: 0; top: 62px;
+      background: rgba(0,0,0,0.5); z-index: 198;
+    }
+    .nav-overlay.open { display: block; }
+    @media(max-width:900px) {
+      nav { padding: 0 1.4rem; }
+      .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
+      .nav-drawer { display: block; }
+    }
+
+    /* ── LOADING ── */
+    .loading {
+      display: none; position: fixed; inset: 0;
+      background: rgba(5,7,26,0.96); z-index: 300;
+      flex-direction: column; align-items: center; justify-content: center;
+      gap: 1.5rem;
+    }
+    .loading.on { display: flex; }
+    .load-rune {
+      font-size: 2.5rem; color: var(--gold);
+      animation: spin 3s linear infinite;
+    }
+    .load-txt {
+      font-family: var(--fs); font-size: 0.8rem; letter-spacing: 0.3em;
+      text-transform: uppercase; color: var(--gold-dim);
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* ── ANIMATIONS ── */
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; } to { opacity: 1; }
+    }
+    @keyframes cardGlow {
+      0%,100% { box-shadow: 0 0 22px var(--glow), 0 22px 55px rgba(0,0,0,0.4); }
+      50%      { box-shadow: 0 0 45px rgba(201,168,76,0.55), 0 22px 55px rgba(0,0,0,0.4); }
+    }
+    @keyframes shimmer {
+      0% { background-position: -200% center; }
+      100% { background-position: 200% center; }
+    }
+
+    /* ── MAIN PAGE ── */
+    .page { position: relative; z-index: 1; }
+    .result-wrap {
+      max-width: 1060px; margin: 0 auto;
+      padding: 5rem 2rem 6rem;
+    }
+
+    /* ── HERO HEADER ── */
+    .r-head {
+      text-align: center; margin-bottom: 3.5rem;
+      animation: slideUp 0.8s 0.1s var(--ease) both;
+    }
+    .r-category-badge {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-family: var(--fs); font-size: 0.65rem; letter-spacing: 0.35em;
+      text-transform: uppercase; color: var(--gold);
+      background: rgba(201,168,76,0.1); border: 1px solid rgba(201,168,76,0.3);
+      padding: 0.4rem 1.2rem; border-radius: 20px; margin-bottom: 1.2rem;
+    }
+    .r-category-badge .badge-icon { font-size: 1rem; }
+    .r-title {
+      font-family: var(--fd);
+      font-size: clamp(1.6rem, 4vw, 2.8rem);
+      color: var(--gold-pale);
+      text-shadow: 0 0 60px rgba(201,168,76,0.3);
+      margin-bottom: 0.6rem; line-height: 1.15;
+    }
+    .r-subtitle {
+      font-family: var(--fs); font-style: italic;
+      color: var(--white-dim); font-size: 1.1rem;
+    }
+
+    /* ── QUESTION BOX ── */
+    .q-box {
+      text-align: center; margin-bottom: 3rem;
+      padding: 1.2rem 2rem;
+      border: 1px solid rgba(201,168,76,0.2);
+      border-radius: 4px;
+      background: rgba(13,18,64,0.4);
+      animation: slideUp 0.7s 0.2s var(--ease) both;
+    }
+    .q-box-label {
+      font-family: var(--fs); font-size: 0.62rem; letter-spacing: 0.3em;
+      text-transform: uppercase; color: var(--gold); margin-bottom: 0.4rem;
+    }
+    .q-box-text { font-style: italic; font-size: 1.15rem; color: var(--white-dim); }
+
+    /* ── CARDS ROW ── */
+    .cards-row {
+      display: flex; gap: 1.5rem; justify-content: center;
+      flex-wrap: wrap; margin-bottom: 4rem;
+    }
+    .r-card {
+      display: flex; flex-direction: column; align-items: center;
+      gap: 0.8rem; text-align: center;
+      animation: slideUp 0.7s var(--ease) both;
+    }
+    .r-visual {
+      width: 130px; height: 210px; border-radius: 10px;
+      border: 2px solid var(--gold);
+      position: relative; overflow: hidden;
+      background: linear-gradient(155deg, var(--navy-light), var(--navy));
+      animation: cardGlow 3s ease-in-out infinite;
+      cursor: pointer;
+      transition: transform 0.3s var(--ease);
+      flex-shrink: 0;
+    }
+    .r-visual:hover { transform: translateY(-6px) scale(1.03); }
+    .r-visual-img {
+      position: absolute; inset: 0; width: 100%; height: 100%;
+      object-fit: cover; object-position: center top;
+      border-radius: 8px; display: block;
+    }
+    .r-visual.reversed .r-visual-img { transform: rotate(180deg); }
+    .r-visual-overlay {
+      position: absolute; bottom: 0; left: 0; right: 0; z-index: 2;
+      background: linear-gradient(to top, rgba(5,7,26,0.96) 0%, rgba(5,7,26,0.55) 65%, transparent 100%);
+      padding: 1rem 0.4rem 0.4rem; text-align: center;
+      border-radius: 0 0 8px 8px;
+    }
+    .r-visual-overlay .rvo-num {
+      font-family: var(--fs); font-size: 0.6rem;
+      color: var(--gold); letter-spacing: 0.18em; display: block;
+    }
+    .r-visual-overlay .rvo-name {
+      font-family: var(--fs); font-size: 0.52rem;
+      color: var(--gold-light); text-transform: uppercase;
+      letter-spacing: 0.08em; line-height: 1.3; display: block; margin-top: 0.15rem;
+    }
+    .r-visual-fallback {
+      position: absolute; inset: 0; z-index: 1;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center; padding: 1rem;
+    }
+    .rv-sym { font-size: 2.5rem; margin: 0.4rem 0; }
+    .rv-name {
+      font-family: var(--fs); font-size: 0.62rem;
+      color: var(--gold-light); text-transform: uppercase;
+      letter-spacing: 0.1em; line-height: 1.3; margin-top: 0.2rem;
+    }
+    .r-visual.has-img .r-visual-fallback { display: none; }
+    .r-visual:not(.has-img) .r-visual-img { display: none; }
+    .r-visual:not(.has-img) .r-visual-overlay { display: none; }
+    .r-pos {
+      font-family: var(--fs); font-size: 0.65rem; color: var(--gold-dim);
+      letter-spacing: 0.18em; text-transform: uppercase;
+    }
+    .r-orientation {
+      display: inline-block; font-family: var(--fs); font-size: 0.58rem;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      padding: 0.2rem 0.7rem; border-radius: 10px;
+    }
+    .r-orientation.upright { background: rgba(201,168,76,0.12); color: var(--gold); }
+    .r-orientation.reversed { background: rgba(168,85,247,0.12); color: #c084fc; }
+
+    /* ── YES/NO VERDICT ── */
+    .verdict-banner {
+      text-align: center; margin-bottom: 3rem;
+      animation: slideUp 0.8s 0.3s var(--ease) both;
+    }
+    .verdict-circle {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 120px; height: 120px; border-radius: 50%;
+      border: 2px solid var(--gold);
+      font-family: var(--fd); font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+    .verdict-circle.yes {
+      background: radial-gradient(circle, rgba(201,168,76,0.2), rgba(13,18,64,0.6));
+      color: var(--gold-pale);
+      box-shadow: 0 0 50px rgba(201,168,76,0.3);
+    }
+    .verdict-circle.no {
+      background: radial-gradient(circle, rgba(168,85,247,0.2), rgba(13,18,64,0.6));
+      color: #c084fc;
+      box-shadow: 0 0 50px rgba(168,85,247,0.2);
+      border-color: #a855f7;
+    }
+    .verdict-label {
+      font-family: var(--fs); font-size: 0.7rem; letter-spacing: 0.4em;
+      text-transform: uppercase; color: var(--gold-dim);
+    }
+
+    /* ── DIVIDER ── */
+    .divider {
+      display: flex; align-items: center; gap: 1rem;
+      max-width: 400px; margin: 0 auto 3rem;
+    }
+    .divider::before {
+      content: ''; flex: 1; height: 1px;
+      background: linear-gradient(to right, transparent, var(--gold-dim));
+    }
+    .divider::after {
+      content: ''; flex: 1; height: 1px;
+      background: linear-gradient(to left, transparent, var(--gold-dim));
+    }
+    .divider span { color: var(--gold); font-size: 1rem; }
+
+    /* ── INTERPRETATION CARDS ── */
+    .interp-section { margin-bottom: 4rem; }
+    .interp-label {
+      font-family: var(--fs); font-size: 0.7rem; letter-spacing: 0.38em;
+      text-transform: uppercase; color: var(--gold);
+      text-align: center; margin-bottom: 2.5rem;
+    }
+
+    .ci {
+      margin-bottom: 2rem;
+      background: linear-gradient(135deg, rgba(13,18,64,0.65), rgba(5,7,26,0.85));
+      border: 1px solid rgba(201,168,76,0.14);
+      border-radius: 12px;
+      overflow: hidden;
+      animation: slideUp 0.6s var(--ease) both;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+    .ci:hover {
+      border-color: rgba(201,168,76,0.3);
+      box-shadow: 0 8px 40px rgba(0,0,0,0.3);
+    }
+    .ci-inner { display: flex; gap: 0; }
+    .ci-card-col {
+      width: 100px; flex-shrink: 0;
+      background: linear-gradient(180deg, rgba(13,18,64,0.8), rgba(5,7,26,0.9));
+      border-right: 1px solid rgba(201,168,76,0.1);
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      padding: 1.5rem 0.8rem; gap: 0.8rem;
+    }
+    .ci-thumb {
+      width: 64px; height: 102px; border-radius: 6px;
+      object-fit: cover; object-position: center top;
+      border: 1.5px solid rgba(201,168,76,0.4);
+    }
+    .ci-thumb-fallback {
+      width: 64px; height: 102px; border-radius: 6px;
+      background: var(--navy-mid); border: 1.5px solid rgba(201,168,76,0.3);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.6rem;
+    }
+    .ci-thumb.reversed { transform: rotate(180deg); }
+    .ci-pos-tag {
+      font-family: var(--fs); font-size: 0.56rem; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--gold-dim);
+      text-align: center; line-height: 1.4;
+    }
+
+    .ci-content { flex: 1; padding: 1.8rem 2rem; }
+    .ci-head {
+      display: flex; align-items: flex-start;
+      justify-content: space-between; gap: 1rem;
+      margin-bottom: 1rem; flex-wrap: wrap;
+    }
+    .ci-card-name {
+      font-family: var(--fd); font-size: 1.1rem;
+      color: var(--gold-pale); line-height: 1.2;
+    }
+    .ci-card-num {
+      font-family: var(--fs); font-size: 0.7rem;
+      color: var(--gold-dim); letter-spacing: 0.1em;
+      display: block; margin-top: 0.2rem;
+    }
+    .ci-orient {
+      display: inline-block; font-family: var(--fs); font-size: 0.58rem;
+      letter-spacing: 0.15em; text-transform: uppercase;
+      padding: 0.25rem 0.8rem; border-radius: 10px; flex-shrink: 0;
+    }
+    .ci-orient.upright {
+      background: rgba(201,168,76,0.12); color: var(--gold);
+      border: 1px solid rgba(201,168,76,0.25);
+    }
+    .ci-orient.reversed {
+      background: rgba(168,85,247,0.12); color: #c084fc;
+      border: 1px solid rgba(168,85,247,0.25);
+    }
+
+    /* Category interpretation text */
+    .ci-cat-label {
+      font-family: var(--fs); font-size: 0.62rem; letter-spacing: 0.22em;
+      text-transform: uppercase; color: var(--gold);
+      margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.4rem;
+    }
+    .ci-cat-icon { font-size: 0.9rem; }
+    .ci-interpretation {
+      color: var(--white-dim); line-height: 1.9;
+      font-size: 1.05rem; font-style: italic;
+      margin-bottom: 1.2rem;
+    }
+    .ci-base-meaning {
+      font-family: var(--fs); font-size: 0.95rem;
+      color: rgba(248,244,238,0.5); line-height: 1.75;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(201,168,76,0.1);
+    }
+    .ci-base-meaning strong {
+      font-family: var(--fs); font-size: 0.6rem; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--gold-dim); display: block;
+      margin-bottom: 0.3rem; font-weight: normal;
+    }
+
+    /* ── SYNTHESIS SECTION ── */
+    .synthesis {
+      background: linear-gradient(135deg, rgba(13,18,64,0.5), rgba(5,7,26,0.8));
+      border: 1px solid rgba(201,168,76,0.2);
+      border-radius: 12px; padding: 2.5rem;
+      margin-bottom: 3rem; text-align: center;
+      position: relative; overflow: hidden;
+      animation: slideUp 0.6s 0.4s var(--ease) both;
+    }
+    .synthesis::before {
+      content: '✦';
+      position: absolute; top: -0.5rem; left: 50%;
+      transform: translateX(-50%);
+      font-size: 6rem; color: rgba(201,168,76,0.04);
+      pointer-events: none; line-height: 1;
+    }
+    .synthesis-label {
+      font-family: var(--fs); font-size: 0.65rem; letter-spacing: 0.35em;
+      text-transform: uppercase; color: var(--gold); margin-bottom: 1rem;
+    }
+    .synthesis-text {
+      font-family: var(--fd); font-size: clamp(1rem, 2vw, 1.25rem);
+      color: var(--gold-pale); line-height: 1.7;
+      font-style: normal; max-width: 700px; margin: 0 auto;
+    }
+
+    /* ── YES/NO ENERGY BARS ── */
+    .energy-section {
+      margin-bottom: 3rem;
+      animation: slideUp 0.6s 0.3s var(--ease) both;
+    }
+    .energy-label {
+      font-family: var(--fs); font-size: 0.65rem; letter-spacing: 0.3em;
+      text-transform: uppercase; color: var(--gold); margin-bottom: 1.2rem;
+      text-align: center;
+    }
+    .energy-bars { display: flex; flex-direction: column; gap: 0.9rem; max-width: 500px; margin: 0 auto; }
+    .energy-row { display: flex; align-items: center; gap: 1rem; }
+    .energy-row-label {
+      font-family: var(--fs); font-size: 0.68rem; letter-spacing: 0.1em;
+      color: var(--white-dim); width: 90px; flex-shrink: 0; text-align: right;
+    }
+    .energy-bar-track {
+      flex: 1; height: 6px; background: rgba(255,255,255,0.07);
+      border-radius: 3px; overflow: hidden;
+    }
+    .energy-bar-fill {
+      height: 100%; border-radius: 3px;
+      background: linear-gradient(to right, var(--gold-dim), var(--gold));
+      transition: width 1.2s var(--ease);
+    }
+    .energy-bar-fill.reversed { background: linear-gradient(to right, rgba(168,85,247,0.4), #a855f7); }
+    .energy-pct {
+      font-family: var(--fs); font-size: 0.68rem;
+      color: var(--gold-dim); width: 34px; flex-shrink: 0;
+    }
+
+    /* ── RESONANCE ── */
+    .resonance {
+      text-align: center; padding: 2.5rem 2rem;
+      border-top: 1px solid rgba(201,168,76,0.1);
+      margin-top: 1rem;
+      animation: slideUp 0.6s 0.5s var(--ease) both;
+    }
+    .resonance h2 {
+      font-family: var(--fd); font-size: 1.25rem;
+      color: var(--gold-pale); margin-bottom: 0.4rem;
+    }
+    .resonance p {
+      color: var(--white-dim); font-style: italic;
+      margin-bottom: 1.5rem; font-size: 1rem;
+    }
+    .res-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .res-btn {
+      background: transparent; border: 1px solid rgba(201,168,76,0.28);
+      color: var(--white-dim); font-family: var(--fs); font-size: 0.78rem;
+      letter-spacing: 0.1em; padding: 0.8rem 1.5rem;
+      cursor: pointer; border-radius: 4px; transition: all 0.3s;
+    }
+    .res-btn:hover, .res-btn.on {
+      border-color: var(--gold); color: var(--gold);
+      background: rgba(201,168,76,0.06);
+    }
+    .res-ty { text-align: center; margin-top: 1rem; display: none; }
+    .res-ty.on { display: block; animation: fadeIn 0.5s ease; }
+    .res-ty p { font-style: italic; color: var(--gold-light); font-size: 1.05rem; }
+
+    /* ── ACTION BUTTONS ── */
+    .act-strip {
+      display: flex; gap: 1rem; justify-content: center;
+      flex-wrap: wrap; margin-bottom: 3rem;
+      animation: slideUp 0.6s 0.6s var(--ease) both;
+    }
+    .act-btn {
+      background: rgba(13,18,64,0.6); border: 1px solid rgba(201,168,76,0.2);
+      color: var(--white-dim); font-family: var(--fs); font-size: 0.78rem;
+      letter-spacing: 0.12em; padding: 1rem 1.5rem; cursor: pointer;
+      border-radius: 6px; transition: all 0.3s; text-decoration: none;
+      display: flex; align-items: center; gap: 0.5rem;
+    }
+    .act-btn:hover {
+      border-color: var(--gold); color: var(--gold-light);
+      background: rgba(201,168,76,0.07); transform: translateY(-2px);
+    }
+    .act-btn span { font-size: 1.2rem; }
+
+    /* ── ZOOM LIGHTBOX ── */
+    .zoom-overlay {
+      display: none; position: fixed; inset: 0;
+      background: rgba(5,7,26,0.97); z-index: 500;
+      align-items: center; justify-content: center;
+      padding: 2rem; cursor: pointer;
+    }
+    .zoom-overlay.on { display: flex; animation: fadeIn 0.3s ease; }
+    .zoom-inner {
+      display: flex; gap: 3rem; align-items: flex-start;
+      max-width: 820px; width: 100%;
+      cursor: default; pointer-events: none;
+    }
+    @media(max-width:640px) {
+      .zoom-inner { flex-direction: column; align-items: center; gap: 2rem; }
+    }
+    .zoom-img-wrap { flex-shrink: 0; pointer-events: auto; }
+    .zoom-card-img {
+      width: 200px; height: 320px; border-radius: 12px;
+      object-fit: cover; object-position: center top;
+      border: 2px solid var(--gold);
+      box-shadow: 0 0 60px rgba(201,168,76,0.3), 0 30px 80px rgba(0,0,0,0.7);
+    }
+    .zoom-card-img.reversed { transform: rotate(180deg); }
+    .zoom-fallback {
+      width: 200px; height: 320px; border-radius: 12px;
+      background: linear-gradient(155deg, var(--navy-light), var(--navy));
+      border: 2px solid var(--gold);
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: 0.5rem;
+    }
+    .zoom-fallback .zf-sym { font-size: 4rem; }
+    .zoom-fallback .zf-name {
+      font-family: var(--fs); font-size: 0.7rem; color: var(--gold-light);
+      text-transform: uppercase; letter-spacing: 0.1em; text-align: center;
+    }
+    .zoom-info { flex: 1; pointer-events: auto; }
+    .zoom-close {
+      position: absolute; top: 1.5rem; right: 1.5rem;
+      background: none; border: none; color: var(--white-dim);
+      font-size: 2rem; cursor: pointer; z-index: 10; transition: color 0.2s;
+    }
+    .zoom-close:hover { color: var(--gold); }
+    .zoom-pos {
+      font-family: var(--fs); font-size: 0.65rem; letter-spacing: 0.3em;
+      text-transform: uppercase; color: var(--gold); margin-bottom: 0.4rem;
+    }
+    .zoom-name {
+      font-family: var(--fd); font-size: 1.9rem;
+      color: var(--gold-pale); margin-bottom: 0.3rem; line-height: 1.15;
+    }
+    .zoom-num {
+      font-family: var(--fs); font-size: 0.75rem;
+      color: var(--gold-dim); letter-spacing: 0.2em; margin-bottom: 1rem;
+    }
+    .zoom-orient {
+      display: inline-block; font-family: var(--fs); font-size: 0.6rem;
+      letter-spacing: 0.15em; text-transform: uppercase;
+      padding: 0.3rem 0.9rem; border-radius: 20px; margin-bottom: 1.2rem;
+    }
+    .zoom-orient.upright {
+      background: rgba(201,168,76,0.15); color: var(--gold);
+      border: 1px solid rgba(201,168,76,0.3);
+    }
+    .zoom-orient.reversed {
+      background: rgba(168,85,247,0.15); color: #c084fc;
+      border: 1px solid rgba(168,85,247,0.3);
+    }
+    .zoom-meaning-lbl {
+      font-family: var(--fs); font-size: 0.6rem; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--gold-dim); margin-bottom: 0.4rem;
+    }
+    .zoom-meaning {
+      color: var(--white-dim); line-height: 1.85;
+      font-size: 1.05rem; font-style: italic; margin-bottom: 1.2rem;
+    }
+    .zoom-desc {
+      color: rgba(248,244,238,0.45); line-height: 1.7;
+      font-size: 0.95rem; border-top: 1px solid rgba(201,168,76,0.12);
+      padding-top: 1rem;
+    }
+
+    /* ── TOAST ── */
+    .toast {
+      position: fixed; bottom: 2rem; left: 50%;
+      transform: translateX(-50%) translateY(120px);
+      background: var(--navy-light); border: 1px solid var(--gold);
+      color: var(--gold-light); font-family: var(--fs); font-size: 0.82rem;
+      letter-spacing: 0.1em; padding: 1rem 2rem; border-radius: 4px;
+      z-index: 600; transition: transform 0.4s var(--ease);
+    }
+    .toast.on { transform: translateX(-50%) translateY(0); }
+
+    /* ── PRINT ── */
+    .print-brand {
+      display: none; text-align: center; font-family: var(--fd);
+      font-size: 1rem; color: var(--gold); margin-bottom: 1.5rem;
+    }
+    @media print {
+      .print-brand { display: block; }
+      nav, .zoom-overlay, .toast, .loading, .act-strip, .resonance,
+      .nav-hamburger, .nav-drawer, .nav-overlay, #starCanvas { display: none !important; }
+      body { background: white; color: #1a1a1a; }
+      .ci { border: 1px solid #ccc !important; }
+    }
+
+    /* ── RESPONSIVE ── */
+    @media(max-width:680px) {
+      .r-visual { width: 90px; height: 144px; }
+      .ci-inner { flex-direction: column; }
+      .ci-card-col { width: 100%; flex-direction: row; padding: 1rem 1.5rem; border-right: none; border-bottom: 1px solid rgba(201,168,76,0.1); }
+      .ci-content { padding: 1.3rem 1.5rem; }
+    }
+  
+    /* ── YES/NO HERO LAYOUT ── */
+    .yesno-hero {
+      display: flex; flex-direction: column; align-items: center;
+      gap: 2rem; margin-bottom: 3rem; text-align: center;
+    }
+    .yesno-card-wrap {
+      position: relative; display: inline-block;
+    }
+    .yesno-card-visual {
+      width: 180px; height: 290px; border-radius: 14px;
+      border: 2px solid var(--gold);
+      position: relative; overflow: hidden;
+      background: linear-gradient(155deg, var(--navy-light), var(--navy));
+      animation: cardGlow 3s ease-in-out infinite;
+      cursor: pointer;
+      transition: transform 0.3s var(--ease);
+      box-shadow: 0 0 60px rgba(201,168,76,0.25), 0 30px 60px rgba(0,0,0,0.5);
+    }
+    .yesno-card-visual:hover { transform: translateY(-6px) scale(1.02); }
+    .yesno-card-visual .r-visual-img {
+      position: absolute; inset: 0; width: 100%; height: 100%;
+      object-fit: cover; object-position: center top; border-radius: 12px;
+    }
+    .yesno-card-visual.reversed .r-visual-img { transform: rotate(180deg); }
+    .yesno-card-visual .r-visual-overlay {
+      position: absolute; bottom: 0; left: 0; right: 0; z-index: 2;
+      background: linear-gradient(to top, rgba(5,7,26,0.97) 0%, rgba(5,7,26,0.6) 60%, transparent 100%);
+      padding: 1.2rem 0.5rem 0.6rem; text-align: center;
+    }
+    .yesno-card-visual .rvo-num {
+      font-family: var(--fs); font-size: 0.62rem;
+      color: var(--gold); letter-spacing: 0.18em; display: block;
+    }
+    .yesno-card-visual .rvo-name {
+      font-family: var(--fs); font-size: 0.55rem;
+      color: var(--gold-light); text-transform: uppercase;
+      letter-spacing: 0.08em; line-height: 1.3; display: block; margin-top: 0.15rem;
+    }
+    .yesno-card-visual .r-visual-fallback {
+      position: absolute; inset: 0;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center; padding: 1rem;
+    }
+    .yesno-card-visual.has-img .r-visual-fallback { display: none; }
+    .yesno-card-visual:not(.has-img) .r-visual-img { display: none; }
+    .yesno-card-visual:not(.has-img) .r-visual-overlay { display: none; }
+
+    .yesno-verdict {
+      display: flex; flex-direction: column; align-items: center; gap: 0.8rem;
+    }
+    .yesno-verdict-circle {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 110px; height: 110px; border-radius: 50%;
+      font-family: var(--fd); font-size: 1.6rem;
+      animation: slideUp 0.6s 0.3s var(--ease) both;
+    }
+    .yesno-verdict-circle.yes {
+      background: radial-gradient(circle, rgba(201,168,76,0.2), rgba(13,18,64,0.7));
+      color: var(--gold-pale);
+      border: 2px solid var(--gold);
+      box-shadow: 0 0 50px rgba(201,168,76,0.3);
+    }
+    .yesno-verdict-circle.no {
+      background: radial-gradient(circle, rgba(168,85,247,0.2), rgba(13,18,64,0.7));
+      color: #e2b8ff;
+      border: 2px solid #a855f7;
+      box-shadow: 0 0 50px rgba(168,85,247,0.2);
+    }
+    .yesno-verdict-label {
+      font-family: var(--fs); font-size: 0.7rem; letter-spacing: 0.35em;
+      text-transform: uppercase; color: var(--gold-dim);
+      animation: slideUp 0.6s 0.5s var(--ease) both;
+    }
+    .yesno-card-name {
+      font-family: var(--fd); font-size: 1.1rem; color: var(--gold-pale);
+      animation: slideUp 0.6s 0.15s var(--ease) both;
+    }
+    .yesno-card-orient {
+      display: inline-block; font-family: var(--fs); font-size: 0.6rem;
+      letter-spacing: 0.15em; text-transform: uppercase;
+      padding: 0.25rem 0.8rem; border-radius: 10px;
+      animation: slideUp 0.6s 0.2s var(--ease) both;
+    }
+    .yesno-card-orient.upright {
+      background: rgba(201,168,76,0.12); color: var(--gold);
+      border: 1px solid rgba(201,168,76,0.25);
+    }
+    .yesno-card-orient.reversed {
+      background: rgba(168,85,247,0.12); color: #c084fc;
+      border: 1px solid rgba(168,85,247,0.25);
+    }
+
+  
+    /* ══ ADS: FIXED RIGHT SIDEBAR (desktop ≥1100px) ══ */
+    .ad-sidebar-fixed { display: none; }
+    @media (min-width: 1100px) {
+      .ad-sidebar-fixed {
+        display: flex; flex-direction: column; align-items: center;
+        position: fixed; top: 50%; right: 0;
+        transform: translateY(-50%); width: 160px; z-index: 90;
+      }
+      .ad-sidebar-inner {
+        width: 160px; min-height: 600px;
+        background: rgba(8,12,42,0.7);
+        border-left: 1px solid rgba(201,168,76,0.1);
+        display: flex; flex-direction: column;
+        align-items: center; padding: 0.5rem 0;
+      }
+      body.has-sidebar { margin-right: 164px; }
+    }
+    @media (min-width: 1400px) {
+      .ad-sidebar-fixed { width: 300px; }
+      .ad-sidebar-inner { width: 300px; }
+      body.has-sidebar { margin-right: 304px; }
+    }
+    .ad-sidebar-label, .ad-mid-label, .ad-sticky-label {
+      font-family: 'Cinzel', serif; font-size: 0.42rem;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      color: rgba(201,168,76,0.22); text-align: center;
+      display: block; width: 100%; padding: 3px 0 2px;
+    }
+    /* ══ ADS: MID-CONTENT responsive ══ */
+    .ad-mid-wrap {
+      width: 100%; display: flex; flex-direction: column;
+      align-items: center; margin: 2rem 0;
+    }
+    /* ══ ADS: STICKY BOTTOM (mobile + tablet) ══ */
+    .ad-sticky-bottom { display: none; }
+    @media (max-width: 1099px) {
+      .ad-sticky-bottom {
+        display: flex; flex-direction: column;
+        align-items: center; justify-content: center;
+        position: fixed; bottom: 0; left: 0; right: 0;
+        z-index: 9999; background: rgba(5,7,26,0.97);
+        border-top: 1px solid rgba(201,168,76,0.18);
+        padding-bottom: env(safe-area-inset-bottom, 0px);
+        min-height: 62px;
+      }
+      .ad-sticky-close {
+        position: absolute; top: 3px; right: 8px;
+        background: none; border: none;
+        color: rgba(201,168,76,0.28); font-size: 0.75rem;
+        cursor: pointer; padding: 2px 5px; line-height: 1;
+        transition: color 0.2s;
+      }
+      .ad-sticky-close:hover { color: rgba(201,168,76,0.65); }
+      body { padding-bottom: 68px !important; }
+    }
+  </style>
+</head>
+<body>
+<canvas id="starCanvas"></canvas>
+  <!-- ══ FIXED SIDEBAR AD (desktop) ══ -->
+  <div class="ad-sidebar-fixed">
+    <div class="ad-sidebar-inner">
+      <span class="ad-sidebar-label">Advertisement</span>
+      <ins class="adsbygoogle"
+           style="display:block;width:160px;height:600px"
+           data-ad-client="ca-pub-XXXXXXXXXX"
+           data-ad-slot="XXXXXXXXXX"></ins>
+      <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+    </div>
+  </div>
+  <!-- ══ STICKY BOTTOM AD (mobile/tablet) ══ -->
+  <div class="ad-sticky-bottom" id="adStickyBottom">
+    <button class="ad-sticky-close"
+      onclick="document.getElementById('adStickyBottom').style.display='none';document.body.style.removeProperty('padding-bottom')"
+      aria-label="Close ad">&#x2715;</button>
+    <span class="ad-sticky-label">Advertisement</span>
+    <ins class="adsbygoogle"
+         style="display:block;width:320px;height:50px"
+         data-ad-client="ca-pub-XXXXXXXXXX"
+         data-ad-slot="XXXXXXXXXX"></ins>
+    <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+  </div>
+
+<!-- Loading -->
+<div class="loading" id="loading">
+  <div class="load-rune">✦</div>
+  <p class="load-txt">Reading the cards…</p>
+</div>
+
+<!-- Zoom Lightbox -->
+<div class="zoom-overlay" id="zoomOverlay" onclick="if(event.target===this)closeZoom()">
+  <button class="zoom-close" onclick="closeZoom()">✕</button>
+  <div class="zoom-inner">
+    <div class="zoom-img-wrap">
+      <img class="zoom-card-img" id="zoomCardImg" src="" alt="">
+      <div class="zoom-fallback" id="zoomFallback" style="display:none">
+        <span class="zf-sym" id="zoomFSym"></span>
+        <span class="zf-name" id="zoomFName"></span>
+      </div>
+    </div>
+    <div class="zoom-info">
+      <div class="zoom-pos" id="zoomPos"></div>
+      <div class="zoom-name" id="zoomName"></div>
+      <div class="zoom-num" id="zoomNum"></div>
+      <span class="zoom-orient" id="zoomOrient"></span>
+      <div class="zoom-meaning-lbl">Core Meaning</div>
+      <div class="zoom-meaning" id="zoomMeaning"></div>
+      <div class="zoom-desc" id="zoomDesc"></div>
+    </div>
+  </div>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast"></div>
+
+<!-- Nav -->
+<nav>
+  <a href="index.html" class="nav-brand">✦ Tarot's Whisper</a>
+  <ul class="nav-links">
+    <li><a href="daily.html">Daily Card</a></li>
+    <li><a href="library.html">Card Library</a></li>
+    <li><a href="dream.html">Dream Journal</a></li>
+    <li><a href="tools.html">Tools</a></li>
+    <li><a href="stats.html">Insights</a></li>
+    <li><a href="history.html">My Readings</a></li>
+  </ul>
+  <button class="nav-hamburger" id="navHamburger" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="nav-drawer" id="navDrawer">
+  <a href="index.html" class="nav-drawer-brand">✦ Tarot's Whisper</a>
+  <ul>
+    <li><a href="daily.html"><span style="font-size:1.1rem;width:24px;display:inline-block;text-align:center">☽</span>Daily Card</a></li>
+    <li><a href="library.html"><span style="font-size:1.1rem;width:24px;display:inline-block;text-align:center">📚</span>Card Library</a></li>
+    <li><a href="dream.html"><span style="font-size:1.1rem;width:24px;display:inline-block;text-align:center">🌙</span>Dream Journal</a></li>
+    <li><a href="tools.html"><span style="font-size:1.1rem;width:24px;display:inline-block;text-align:center">✦</span>Tools</a></li>
+    <li><a href="stats.html"><span style="font-size:1.1rem;width:24px;display:inline-block;text-align:center">◈</span>Insights</a></li>
+    <li><a href="history.html"><span style="font-size:1.1rem;width:24px;display:inline-block;text-align:center">📖</span>My Readings</a></li>
+  </ul>
+</div>
+<div class="nav-overlay" id="navOverlay"></div>
+
+<div class="page">
+  <div class="result-wrap">
+    <div class="print-brand">✦ Tarot's Whisper &nbsp;·&nbsp; Your Personal Reading</div>
+    <div id="resultRoot"></div>
+  </div>
+</div>
+
+<script>
+(function(){
+  const c=document.getElementById('starCanvas'),ctx=c.getContext('2d');
+  let W,H,stars=[],lines=[];
+  function resize(){W=c.width=innerWidth;H=c.height=innerHeight;}
+  function build(){
+    stars=[];
+    for(let i=0;i<Math.floor(W*H/2800);i++)
+      stars.push({x:Math.random()*W,y:Math.random()*H,r:Math.random()*1.4+0.25,
+        a:Math.random()*0.7+0.3,da:(Math.random()*0.015+0.004)*(Math.random()<0.5?1:-1),
+        gold:Math.random()<0.07});
+    lines=[];
+    for(let i=0;i<8;i++){
+      const a=stars[Math.floor(Math.random()*stars.length)];
+      const b=stars[Math.floor(Math.random()*stars.length)];
+      const d=Math.hypot(b.x-a.x,b.y-a.y);
+      if(d>40&&d<180)lines.push([a,b]);
+    }
+  }
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    lines.forEach(([a,b])=>{
+      ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);
+      ctx.strokeStyle='rgba(201,168,76,0.07)';ctx.lineWidth=0.6;ctx.stroke();
+    });
+    stars.forEach(s=>{
+      s.a+=s.da;
+      if(s.a>1){s.a=1;s.da=-Math.abs(s.da);}
+      if(s.a<0.1){s.a=0.1;s.da=Math.abs(s.da);}
+      ctx.beginPath();
+      if(s.gold){
+        const g=ctx.createRadialGradient(s.x,s.y,0,s.x,s.y,s.r*5);
+        g.addColorStop(0,`rgba(201,168,76,${s.a})`);g.addColorStop(1,'rgba(201,168,76,0)');
+        ctx.arc(s.x,s.y,s.r*5,0,Math.PI*2);ctx.fillStyle=g;
+      }else{
+        ctx.arc(s.x,s.y,s.r,0,Math.PI*2);
+        ctx.fillStyle=`rgba(200,220,255,${s.a*0.65})`;
+      }
+      ctx.fill();
+    });
+    requestAnimationFrame(draw);
+  }
+  resize();build();draw();
+  window.addEventListener('resize',()=>{resize();build();});
+})();
+
+const IMG_FOLDER = 'cards/';
+const MAJOR_NUMS=["0","I","II","III","IV","V","VI","VII","VIII","IX","X","XI","XII","XIII","XIV","XV","XVI","XVII","XVIII","XIX","XX","XXI"];
+const MAJOR_NAMES = ["The Fool","The Magician","The High Priestess","The Empress","The Emperor","The Hierophant","The Lovers","The Chariot","Strength","The Hermit","Wheel of Fortune","Justice","The Hanged Man","Death","Temperance","The Devil","The Tower","The Star","The Moon","The Sun","Judgement","The World"];
+const MINOR_RANKS = ["Ace","2","3","4","5","6","7","8","9","10","Page","Knight","Queen","King"];
+const MINOR_SUITS = ["Wands","Cups","Swords","Pentacles"];
+const SYMS=['☽','✦','⊕','✺','⋈','⊛','♦','⊜','❈','⋄','⊗','⊞','⋅','✧','⊙','☿','✵','⊟','☾','☀','⊖','⊘'];
+const POS={1:['Your Present Truth'],3:['Past Energies','Present Moment','Future Potential'],5:['The Foundation','The Challenge','Hidden Influences','The Advice','The Outcome']};
+const MAJOR_DATA = [
+  {id:0,  name:"The Fool",             number:"0",    uprightMeaning:"New beginnings, innocence, spontaneity — a joyful leap of faith into glorious uncertainty.",          reversedMeaning:"Recklessness, naivety, holding back from new beginnings out of fear.",                                               description:"The Fool stands at the cliff's edge, wholly unafraid. His white rose is pure potential. He leaps anyway."},
+  {id:1,  name:"The Magician",         number:"I",    uprightMeaning:"Willpower, skill, resourcefulness — you have everything you need to manifest your desires.",           reversedMeaning:"Manipulation, poor planning, untapped talents lying dormant within you.",                                            description:"One hand points to heaven, one to earth. As above, so below. The Magician channels all forces."},
+  {id:2,  name:"The High Priestess",   number:"II",   uprightMeaning:"Intuition, sacred knowledge, divine feminine — the answers lie within the silence.",                  reversedMeaning:"Secrets, disconnection from intuition, surface-level knowledge masking deeper truth.",                              description:"She sits between the pillars of duality. She holds the scroll of hidden wisdom and does not speak."},
+  {id:3,  name:"The Empress",          number:"III",  uprightMeaning:"Abundance, fertility, creativity — the earth is generous and so are you.",                            reversedMeaning:"Creative block, dependence, smothering energy or neglect of the natural self.",                                    description:"Crowned with stars, robed in pomegranates. The Empress nurtures all life into glorious bloom."},
+  {id:4,  name:"The Emperor",          number:"IV",   uprightMeaning:"Authority, structure, stability — the throne of order from which all growth is possible.",             reversedMeaning:"Domination, rigidity, loss of authority or failure to hold necessary boundaries.",                                  description:"He sits upon the stone throne, immovable. His will has built civilisations."},
+  {id:5,  name:"The Hierophant",       number:"V",    uprightMeaning:"Tradition, spiritual wisdom, institutions — the sacred bridge between the human and divine.",          reversedMeaning:"Dogma, rebellion against convention, seeking personal truth outside established structures.",                        description:"The keeper of sacred rites. He blesses with two fingers raised — the known and the unknown."},
+  {id:6,  name:"The Lovers",           number:"VI",   uprightMeaning:"Love, harmony, choices — the sacred union of all that you hold dear and all that calls to you.",       reversedMeaning:"Disharmony, imbalance, misaligned values threatening what matters most.",                                           description:"Beneath the angel's blessing, two souls stand naked and unashamed. Love is a choice made conscious."},
+  {id:7,  name:"The Chariot",          number:"VII",  uprightMeaning:"Control, willpower, victory — the determination to conquer opposing forces through sheer resolve.",    reversedMeaning:"Lack of direction, aggression, losing control of conflicting inner forces.",                                       description:"The warrior holds no reins — only will. Two sphinxes of opposing nature obey anyway."},
+  {id:8,  name:"Strength",             number:"VIII", uprightMeaning:"Courage, compassion, inner power — the lion is tamed not by force but by love.",                      reversedMeaning:"Self-doubt, weakness, insecurity, or raw instinct overriding gentle wisdom.",                                      description:"She closes the lion's mouth with a touch, not a blow. Infinite patience is infinite power."},
+  {id:9,  name:"The Hermit",           number:"IX",   uprightMeaning:"Soul-searching, solitude, inner guidance — the lantern you carry illuminates your own sacred path.",   reversedMeaning:"Isolation, loneliness, withdrawal from others becoming a form of hiding.",                                        description:"The old man walks alone on the mountain. His lamp holds a six-pointed star — a light only he can see."},
+  {id:10, name:"Wheel of Fortune",     number:"X",    uprightMeaning:"Good luck, karma, life cycles — the wheel turns and fortune rises to meet you.",                       reversedMeaning:"Bad luck, resistance to change, clinging to a cycle that must be released.",                                      description:"The wheel spins eternally. At its hub sits the unmoved witness. Fate is not fixed — it is turning."},
+  {id:11, name:"Justice",              number:"XI",   uprightMeaning:"Fairness, truth, cause and effect — what is righteous will be revealed and honoured.",                 reversedMeaning:"Dishonesty, unfairness, refusal to take accountability for what has been set in motion.",                          description:"She holds the scales and the sword. Truth is not gentle, but it is always liberating."},
+  {id:12, name:"The Hanged Man",       number:"XII",  uprightMeaning:"Surrender, new perspective, sacrifice — releasing what was reveals what always was.",                  reversedMeaning:"Delay, resistance, martyrdom without meaning or spiritual growth.",                                               description:"He hangs willingly, one leg crossed. His face is serene. Surrender is the only way through."},
+  {id:13, name:"Death",                number:"XIII", uprightMeaning:"Endings, beginnings, transformation — one chapter must close so another can begin.",                   reversedMeaning:"Resistance to change, stagnation, clinging to what has already ended.",                                            description:"The pale rider moves through the field. King and peasant alike must bow. Transformation spares no one."},
+  {id:14, name:"Temperance",           number:"XIV",  uprightMeaning:"Balance, moderation, patience — the alchemy of opposites creates the philosopher's gold.",             reversedMeaning:"Imbalance, excess, impatience disrupting the delicate work of integration.",                                       description:"The angel pours water between cups — neither emptying nor filling. The middle path is a sacred art."},
+  {id:15, name:"The Devil",            number:"XV",   uprightMeaning:"Shadow self, addiction, restriction — the chains you wear were forged by your own hand.",              reversedMeaning:"Releasing limitations, detachment, reclaiming power from what has held you captive.",                               description:"The couple stands chained, yet the chains are loose. They could leave. They choose to stay. Why?"},
+  {id:16, name:"The Tower",            number:"XVI",  uprightMeaning:"Sudden upheaval, revelation, chaos — what was false must fall so what is true can stand.",             reversedMeaning:"Averting disaster, fear of necessary change, clinging to a crumbling foundation.",                                  description:"Lightning strikes the crown. The tower falls. But the foundation? The foundation remains."},
+  {id:17, name:"The Star",             number:"XVII", uprightMeaning:"Hope, faith, renewal — after the storm, the stars return to guide the way home.",                      reversedMeaning:"Hopelessness, despair, disconnection from the divine light that never truly leaves.",                               description:"Naked, she pours the waters of healing. Above her, the eight-pointed star burns with quiet certainty."},
+  {id:18, name:"The Moon",             number:"XVIII",uprightMeaning:"Illusion, fear, the subconscious — the path through the dark water leads to what is most true.",       reversedMeaning:"Confusion lifting, repressed fear surfacing to be healed, inner turmoil seeking resolution.",                      description:"The moon illuminates only what it chooses. The dog and wolf howl at the same mystery."},
+  {id:19, name:"The Sun",              number:"XIX",  uprightMeaning:"Positivity, vitality, joy — pure radiant life-force flowing through every corner of your world.",      reversedMeaning:"Temporary sadness, lack of enthusiasm, the sun hidden briefly behind passing clouds.",                              description:"The child dances on the white horse, arms wide. No shadow here. The sun asks nothing and gives everything."},
+  {id:20, name:"Judgement",            number:"XX",   uprightMeaning:"Reflection, reckoning, awakening — the call you have been waiting for has finally arrived.",           reversedMeaning:"Self-doubt, ignoring the call, inability to forgive the past and rise from it.",                                     description:"The angel sounds the horn. The dead rise. This is not an ending — it is a beginning you earned."},
+  {id:21, name:"The World",            number:"XXI",  uprightMeaning:"Completion, integration, wholeness — you have come full circle. You have arrived.",                    reversedMeaning:"Unfinished business, shortcuts taken, delays in the completion you have earned.",                                  description:"A dancer wreathed in laurel. The journey is done. The cycle fulfilled. You are whole."}
+];
+
+/* ── Minor Arcana: generate all 56 with suit-based meanings ── */
+const MINOR_SUITS_DATA = [
+  { name:"Wands",     sym:"🔥",
+    theme:"fire, passion, creativity, ambition and will",
+    uprightBase: (r,rank) => {
+      const meanings = {
+        "Ace":   "A spark of pure creative fire — new inspiration, ambition, or venture bursting into life.",
+        "2":     "Planning, future vision, personal power — you stand at the crossroads of a bold new direction.",
+        "3":     "Expansion, foresight, enterprise — your efforts are bearing fruit and the horizon is wide.",
+        "4":     "Celebration, harmony, homecoming — a moment of joy and stability earned through effort.",
+        "5":     "Conflict, competition, strife — competing energies seeking dominance and resolution.",
+        "6":     "Victory, public recognition, progress — your hard work is acknowledged and celebrated.",
+        "7":     "Challenge, perseverance, standing firm — defend what you have built with passionate conviction.",
+        "8":     "Speed, swift action, rapid progress — events accelerate and momentum is undeniable.",
+        "9":     "Resilience, courage, persistence — battle-weary but still standing, still fighting.",
+        "10":    "Burden, responsibility, overextension — you carry too much and must learn to delegate.",
+        "Page":  "Enthusiasm, exploration, free spirit — a message of creative opportunity is arriving.",
+        "Knight":"Energy, passion, adventure — charging forward with bold, fearless determination.",
+        "Queen": "Confidence, vibrancy, determination — a magnetic force who inspires all around her.",
+        "King":  "Charisma, vision, entrepreneurship — a natural leader who commands respect and achieves greatness."
+      };
+      return meanings[r] || `${r} of Wands brings the fire of passion, creative drive, and spirited action.`;
+    },
+    reversedBase: (r,rank) => {
+      const meanings = {
+        "Ace":   "Delays in creative projects, lack of motivation, or a spark that has not yet found its kindling.",
+        "2":     "Indecision, fear of the unknown, plans that have stalled before taking flight.",
+        "3":     "Lack of foresight, obstacles ahead, or playing too small when expansion is calling.",
+        "4":     "Instability in home or community, postponed celebrations, or disharmony in cherished relationships.",
+        "5":     "Conflict avoidance, inner turmoil, or competition that has become destructive rather than generative.",
+        "6":     "Delayed success, lack of recognition, or private victory without the celebration it deserves.",
+        "7":     "Giving up, overwhelming competition, or capitulating when persistence would have won the day.",
+        "8":     "Delays, frustration, scattered energy failing to reach its target.",
+        "9":     "Exhaustion, paranoia, or stubbornness that prevents necessary rest and recovery.",
+        "10":    "Releasing burdens, delegating at last, or collapsing under weight that was never yours to carry.",
+        "Page":  "Immaturity, lack of direction, or creative energy scattered without focus or form.",
+        "Knight":"Impulsiveness, recklessness, or energy that burns bright and fast without lasting result.",
+        "Queen": "Insecurity, jealousy, or a demanding energy that consumes rather than inspires.",
+        "King":  "Arrogance, impulsiveness, or leadership that has become controlling rather than empowering."
+      };
+      return meanings[r] || `${r} of Wands reversed brings scattered fire, blocked creativity, or misdirected will.`;
+    }
+  },
+  { name:"Cups",      sym:"🌊",
+    theme:"water, emotion, intuition, love and the inner life",
+    uprightBase: (r,rank) => {
+      const meanings = {
+        "Ace":   "A new emotional beginning — love, creativity, compassion, or spiritual connection overflowing.",
+        "2":     "Partnership, mutual attraction, union — two hearts recognising something sacred in each other.",
+        "3":     "Celebration, friendship, community — abundance shared with those you love most.",
+        "4":     "Contemplation, apathy, re-evaluation — something is being offered that you have not yet seen.",
+        "5":     "Grief, regret, loss — mourning what has spilled while forgetting what remains in the cup behind you.",
+        "6":     "Nostalgia, childhood, innocence — the sweetness of the past returning as a gift or a lesson.",
+        "7":     "Fantasy, wishful thinking, illusion — many choices glitter but only one is truly real.",
+        "8":     "Walking away, disillusionment, seeking deeper meaning — what was is no longer enough.",
+        "9":     "Contentment, satisfaction, wishes fulfilled — the wish card, your heart's desire within reach.",
+        "10":    "Harmony, joy, family, emotional fulfilment — the love you have built is whole and beautiful.",
+        "Page":  "A message of the heart, creative intuition, new emotional beginning — listen to your feelings.",
+        "Knight":"Romance, charm, following the heart — a dreamer who arrives bearing gifts of feeling.",
+        "Queen": "Compassion, emotional intelligence, nurturing — she holds space for the depth of all feeling.",
+        "King":  "Emotional balance, generosity, wisdom — a master of the inner life who leads with heart."
+      };
+      return meanings[r] || `${r} of Cups flows with emotional depth, intuitive wisdom, and the language of the heart.`;
+    },
+    reversedBase: (r,rank) => {
+      const meanings = {
+        "Ace":   "Blocked emotions, creative stagnation, or a love that has not yet been allowed to pour freely.",
+        "2":     "Imbalance in partnership, broken connection, or a union that has lost its sacred thread.",
+        "3":     "Overindulgence, gossip, or celebration that masks a deeper unhappiness.",
+        "4":     "Missed opportunity, boredom turned inward, or finally emerging from a long period of withdrawal.",
+        "5":     "Acceptance, moving forward, refusing to let grief become a permanent residence.",
+        "6":     "Living in the past, naivety, or nostalgia preventing full presence in the life before you.",
+        "7":     "Clarity returning after confusion, temptation resisted, or illusions falling away at last.",
+        "8":     "Staying when you should leave, or aimlessly drifting without a sense of meaningful direction.",
+        "9":     "Greed, dissatisfaction, or wishes fulfilled in ways that do not bring the expected joy.",
+        "10":    "Conflict within family or relationships, broken dreams, or happiness just out of reach.",
+        "Page":  "Emotional immaturity, creative block, or a message of the heart that is being suppressed.",
+        "Knight":"Moodiness, unrealistic expectations, or emotional manipulation disguised as romance.",
+        "Queen": "Emotional dependency, insecurity, or empathy that has become self-destructive.",
+        "King":  "Emotional manipulation, volatility, or wisdom about feelings that is not being shared."
+      };
+      return meanings[r] || `${r} of Cups reversed speaks of emotional blockage, confusion of the heart, or feeling adrift.`;
+    }
+  },
+  { name:"Swords",    sym:"⚔️",
+    theme:"air, intellect, conflict, truth and communication",
+    uprightBase: (r,rank) => {
+      const meanings = {
+        "Ace":   "Breakthrough, clarity, truth — a blade of pure intellect cutting through confusion to the essential.",
+        "2":     "Stalemate, blocked decision, wilful blindness — you hold two swords and will not choose.",
+        "3":     "Heartbreak, sorrow, grief — the sword pierces cleanly. Truth hurts. It also heals.",
+        "4":     "Rest, recovery, contemplation — the warrior lays down the sword and honours the need for stillness.",
+        "5":     "Conflict, defeat, hollow victory — winning the battle at too great a cost to the relationship.",
+        "6":     "Transition, moving on, calmer waters ahead — leaving troubled shores for a more peaceful horizon.",
+        "7":     "Deception, strategy, stealth — something is being concealed, taken, or strategically withheld.",
+        "8":     "Restriction, imprisonment, self-imposed limitation — the blindfold is chosen, not imposed.",
+        "9":     "Anxiety, fear, nightmare — the mind has become its own prison in the watches of the night.",
+        "10":    "Ending, painful conclusion, hitting rock bottom — but the sun rises on the horizon. It is finally over.",
+        "Page":  "Curious, communicative, vigilant — a mind that misses nothing and questions everything.",
+        "Knight":"Swift, direct, decisive — charging into truth and conflict with absolute conviction.",
+        "Queen": "Clarity, intelligence, independence — she sees through everything and speaks what she sees.",
+        "King":  "Authority, clarity, ethical power — a master of truth who wields intellect with precision."
+      };
+      return meanings[r] || `${r} of Swords brings the sharp clarity of truth, the courage of honest thought, and the edge of decisive action.`;
+    },
+    reversedBase: (r,rank) => {
+      const meanings = {
+        "Ace":   "Confusion, false starts, or a truth being suppressed that will ultimately demand to be spoken.",
+        "2":     "Indecision finally breaking, seeing beyond the self-imposed blindfold, uneasy truce dissolving.",
+        "3":     "Recovery, releasing pain, healing the heart that was broken open.",
+        "4":     "Restlessness, recovery beginning, re-engagement after a necessary period of withdrawal.",
+        "5":     "Reconciliation, moving past conflict, or resentment that festers beneath a surface peace.",
+        "6":     "Resistance to change, running from problems, or rough waters that must be faced before calm arrives.",
+        "7":     "Coming clean, returning what was taken, or being caught in a deception of your own making.",
+        "8":     "Release, self-acceptance, freedom — removing the blindfold and walking away from the mental prison.",
+        "9":     "Release from worry, inner work paying off, or fear that is finally being brought into the light.",
+        "10":    "Recovery, turning point, survival — you have been through the worst and you are still here.",
+        "Page":  "Scattered thinking, gossip, or a sharp tongue that wounds before the mind considers the consequence.",
+        "Knight":"Recklessness, impulsiveness, or brutally honest communication that leaves casualties behind.",
+        "Queen": "Cold detachment, bitterness, cruelty disguised as honesty, or grief turned inward.",
+        "King":  "Abuse of intellect, tyranny, or a brilliant mind turned toward manipulation and control."
+      };
+      return meanings[r] || `${r} of Swords reversed brings mental confusion, blocked truth, or the shadow side of a sharp and agile mind.`;
+    }
+  },
+  { name:"Pentacles",  sym:"⭐",
+    theme:"earth, material matters, health, work and abundance",
+    uprightBase: (r,rank) => {
+      const meanings = {
+        "Ace":   "New financial opportunity, material abundance, the seed of practical prosperity planted with intention.",
+        "2":     "Balance, adaptability, juggling priorities — maintaining harmony amid the constant flux of practical life.",
+        "3":     "Teamwork, craftsmanship, collaboration — skilled work recognised and built upon by others.",
+        "4":     "Security, stability, conservatism — holding what you have earned, perhaps a little too tightly.",
+        "5":     "Financial hardship, poverty, insecurity — reaching out for help is strength, not weakness.",
+        "6":     "Generosity, charity, prosperity shared — the cycle of giving and receiving in harmonious flow.",
+        "7":     "Assessment, patience, long-term vision — pausing to evaluate before the next investment of effort.",
+        "8":     "Diligence, mastery, craftsmanship — the apprentice who becomes master through devoted practice.",
+        "9":     "Abundance, luxury, self-sufficiency — the fruits of disciplined labour finally, beautifully ripe.",
+        "10":    "Legacy, family wealth, long-term security — the culmination of all material and familial endeavour.",
+        "Page":  "Ambition, diligence, new opportunities — a practical dreamer who turns vision into tangible result.",
+        "Knight":"Reliability, patience, hard work — slow and steady progress building something that will last.",
+        "Queen": "Nurturing, practical, abundant — she creates sanctuary and tends the garden of all she loves.",
+        "King":  "Wealth, security, generosity, mastery — he has built the empire and knows how to sustain it."
+      };
+      return meanings[r] || `${r} of Pentacles brings practical wisdom, material abundance, and the steady rewards of earthly endeavour.`;
+    },
+    reversedBase: (r,rank) => {
+      const meanings = {
+        "Ace":   "Missed opportunities, poor financial decisions, or a promising seed that has not found fertile ground.",
+        "2":     "Disorganisation, financial imbalance, or an overwhelm that cannot be juggled much longer.",
+        "3":     "Lack of teamwork, poor planning, or skills going unrecognised and unrewarded.",
+        "4":     "Greed, materialism, or clinging so tightly to security that growth becomes impossible.",
+        "5":     "Recovery from hardship, refusing help, or emerging from a difficult period with new perspective.",
+        "6":     "Debt, strings-attached generosity, or an imbalance of giving and receiving in material exchange.",
+        "7":     "Impatience, lack of reward, or re-evaluating whether the investment of effort is truly worth it.",
+        "8":     "Cutting corners, laziness, or the frustration of hard work that is not yet bearing fruit.",
+        "9":     "Material loss, superficiality, or success that fails to satisfy the deeper hunger within.",
+        "10":    "Family financial conflict, impermanent foundations, or inheritance that brings more burden than blessing.",
+        "Page":  "Lack of direction, missed opportunities, or practical energy that is not being applied where it matters.",
+        "Knight":"Laziness, obsession with material gain, or slow progress that has come to a complete standstill.",
+        "Queen": "Smothering, financial dependence, neglect of self in endless service to the material needs of others.",
+        "King":  "Financial failure, stubbornness, or material success at the cost of everything that truly matters."
+      };
+      return meanings[r] || `${r} of Pentacles reversed brings material instability, financial anxiety, or practical matters needing urgent attention.`;
+    }
+  }
+];
+
+const RANKS_LIST = ["Ace","2","3","4","5","6","7","8","9","10","Page","Knight","Queen","King"];
+const MINOR_SYMS = ['🔥','🌊','⚔️','⭐'];
+
+/* Build full 78-card CARDS array */
+const CARDS = [...MAJOR_DATA];
+let _mid = 22;
+MINOR_SUITS_DATA.forEach((suit, si) => {
+  RANKS_LIST.forEach((rank, ri) => {
+    CARDS.push({
+      id: _mid++,
+      name: `${rank} of ${suit.name}`,
+      number: ri === 0 ? 'A' : (ri < 10 ? String(ri + 1) : rank.slice(0, 2)),
+      suit: suit.name,
+      uprightMeaning: suit.uprightBase(rank, ri),
+      reversedMeaning: suit.reversedBase(rank, ri),
+      description: `The ${rank} of ${suit.name} channels the energy of ${suit.theme}.`
+    });
+  });
+});
+
+
+/* ════════════════════════════════════════════
+   CATEGORY CONFIG
+════════════════════════════════════════════ */
+const CAT_CONFIG = {
+  general: {
+    icon: '✦',
+    label: 'General Reading',
+    subtitle: 'A message from the universe',
+    posLabels: { 1:['Your Present Truth'], 3:['Past Energies','Present Moment','Future Potential'], 5:['The Foundation','The Challenge','Hidden Influences','The Advice','The Outcome'] },
+    getInterp: (card, reversed) => {
+      const m = reversed ? card.reversedMeaning : card.uprightMeaning;
+      const d = card.description;
+      const intros = [
+        'The universe draws your attention to ',
+        'This card speaks clearly of ',
+        'The cosmos illuminates ',
+        'Your path is marked by '
+      ];
+      const intro = intros[card.id % intros.length];
+      if (reversed) {
+        return `In its reversed position, ${card.name} asks you to pause and reflect. ${m} Look within — the answers you seek are already present, waiting quietly for your acknowledgment.`;
+      }
+      return `${intro}${card.name.toLowerCase()}. ${m} ${d} This energy is alive in your life right now, shaping the currents around you.`;
+    }
+  },
+  career: {
+    icon: '⚔',
+    label: 'Career & Ambition',
+    subtitle: 'Your professional path revealed',
+    posLabels: { 1:['Current Career Energy'], 3:['Where You Have Been','Where You Stand Now','Where You Are Headed'], 5:['Your Foundation','The Obstacle','Hidden Opportunity','The Advice','The Professional Outcome'] },
+    getInterp: (card, reversed) => {
+      const suits = {
+        Wands: 'passion, drive, and creative fire in your work',
+        Cups: 'emotional fulfillment and relationships in your career',
+        Swords: 'clarity of thought, communication, and strategy',
+        Pentacles: 'material success, practical skills, and finances'
+      };
+      const majorCareerThemes = [
+        'a bold new professional chapter','the full power of your skills and will','intuition and hidden knowledge guiding your choices','abundance and creative leadership','structure, authority, and discipline','established wisdom and conventional paths','a pivotal choice that will define your direction','drive, determination, and moving forward boldly','inner strength carrying you through difficulty','a need for solitude and reflection before the next move','a major turn of fortune in your career','fairness, balance, and the truth of your situation','a necessary pause and shift in perspective','transformation — something must end for new work to begin','balance, patience, and the long strategic view','patterns of limitation that may be holding you back','sudden upheaval clearing the way for something better','hope, inspiration, and renewed vision for what is possible','uncertainty and the call to trust your deeper knowing','brilliance, success, and radiant confidence in your craft','a moment of reckoning and recognition of your true calling','the completion of a long cycle and mastery achieved'
+      ];
+      if (card.id < 22) {
+        const theme = majorCareerThemes[card.id] || card.uprightMeaning;
+        if (reversed) {
+          return `In your career, ${card.name} reversed signals ${card.reversedMeaning.toLowerCase()} This is a call to reassess your professional direction. Internal blocks or external delays are present — but they are teachers, not permanent walls.`;
+        }
+        return `${card.name} brings the energy of ${theme} to your professional life. ${card.uprightMeaning} Let this card be your compass as you navigate work, ambition, and purpose.`;
+      }
+      const suit = ['Wands','Cups','Swords','Pentacles'].find(s => card.name.includes(s)) || '';
+      const suitMsg = suits[suit] || 'focused energy in your professional life';
+      if (reversed) {
+        return `This card reversed in your career reading highlights ${card.reversedMeaning.toLowerCase()} The ${suit} energy is asking you to recalibrate your approach to ${suitMsg}.`;
+      }
+      return `The ${card.name} brings ${suitMsg} to your reading. ${card.uprightMeaning} Channel this energy deliberately in your professional decisions this season.`;
+    }
+  },
+  relationship: {
+    icon: '♡',
+    label: 'Love & Relationships',
+    subtitle: "The heart’s true reflection",
+    posLabels: { 1:["The Hearts Truth"], 3:['What Was','What Is','What Could Be'], 5:['Your Energy','Their Energy','The Connection','What Blocks You','The Path Forward'] },
+    getInterp: (card, reversed) => {
+      const loveThemes = [
+        'new love or a fresh romantic beginning','the power to attract and create love through intention','deep intuition about what you truly desire in love','sensuality, abundance, and nurturing in relationships','stability, protection, and a strong foundation','shared values, spiritual connection, and commitment','the sacred union of heart and soul — a profound connection','momentum in love, taking charge of your romantic destiny','the quiet strength that sustains love through all seasons','a period of solitude, reflection, or emotional withdrawal','a fated turning point in your romantic journey','balance, honesty, and the truth of your heart','a pause — releasing what no longer serves love to find clarity','the end of one chapter and the birth of something beautifully new','harmony, patience, and the art of giving and receiving love','attachments that may be holding love hostage — examine them gently','a sudden awakening or unexpected shift in your love life','unconditional love, healing, and the renewal of hope','mystery, illusion, and the invitation to trust your intuition in love','joy, warmth, and the radiant energy of love in its fullest bloom','a call to rise — to love more consciously and deeply','wholeness, completion, and love that has reached its fullest expression'
+      ];
+      if (card.id < 22) {
+        const theme = loveThemes[card.id] || card.uprightMeaning;
+        if (reversed) {
+          return `${card.name} reversed in love speaks of ${card.reversedMeaning.toLowerCase()} This is not a warning but an invitation — to heal, to communicate, to choose love with greater consciousness and care.`;
+        }
+        return `In the realm of love, ${card.name} carries the energy of ${theme}. ${card.uprightMeaning} Let this wisdom guide your heart as you move through your relationships with deeper awareness.`;
+      }
+      if (reversed) {
+        return `This card reversed in your love reading brings attention to ${card.reversedMeaning.toLowerCase()} The heart is asking for honesty — with yourself and those you love. This is a sacred moment of emotional reassessment.`;
+      }
+      return `${card.name} arrives in your love reading bearing a gift: ${card.uprightMeaning} Allow this energy to flow through your relationships, softening defenses and opening the heart to connection.`;
+    }
+  },
+  health: {
+    icon: '◯',
+    label: 'Health & Wellbeing',
+    subtitle: 'Body, mind & spirit in harmony',
+    posLabels: { 1:['Your Wellbeing Now'], 3:['What Drains You','Your Current State','What Restores You'], 5:['Physical Energy','Emotional Wellbeing','Mental State','Spiritual Health','The Path to Healing'] },
+    getInterp: (card, reversed) => {
+      const healthThemes = [
+        'a fresh start in your health journey — new habits are calling','the power of your mind to heal and strengthen your body','listening deeply to your body’s quiet, wise messages','the body’s need for nourishment, rest, and gentle self-care','the importance of structure, routine, and disciplined self-care','honoring time-tested wisdom and seeking guidance when needed','balance between giving and receiving care — you cannot pour from an empty cup','the vital energy of forward movement — your body craves action and vitality','inner strength as medicine — you are more resilient than you know','the healing power of rest, solitude, and turning inward','a significant turning point in your health — change is imminent','the importance of balance — excess in any direction drains wellness','the power of release — letting go of what weighs down body and mind','transformation as healing — shedding what no longer serves your vitality','the art of moderation, balance, and the long, slow work of true healing','examining what beliefs or habits might be undermining your health','a sudden disruption that ultimately clears the way for deeper healing','the healing power of hope, optimism, and a renewed spiritual connection','trusting your intuition about your health — your body knows its truth','the nourishing power of joy, rest, and sunlight on your wellbeing','a time of spiritual and physical renewal — listen for your higher calling','complete integration of body, mind, and spirit — wholeness achieved'
+      ];
+      if (card.id < 22) {
+        const theme = healthThemes[card.id] || card.uprightMeaning;
+        if (reversed) {
+          return `${card.name} reversed in your health reading draws attention to ${card.reversedMeaning.toLowerCase()} Your body and spirit are asking you to pause. What have you been ignoring? This is an invitation to listen — gently, without judgment.`;
+        }
+        return `For your health and wellbeing, ${card.name} highlights ${theme}. ${card.uprightMeaning} Attend to this area of your life with the same love and devotion you would offer a dear friend.`;
+      }
+      if (reversed) {
+        return `This reversed card in your health reading signals ${card.reversedMeaning.toLowerCase()} Your energy system is calling for recalibration. Small, compassionate adjustments now will create profound restoration over time.`;
+      }
+      return `${card.name} in your wellbeing reading carries this wisdom: ${card.uprightMeaning} Honor your body as the sacred vessel it is, and tend to this area of your health with conscious, loving attention.`;
+    }
+  },
+  yesno: {
+    icon: '◈',
+    label: 'Yes or No',
+    subtitle: 'The oracle speaks',
+    posLabels: { 1:["The Oracle Answer"] },
+    getInterp: (card, reversed) => {
+      const positiveIds = [0,3,6,7,8,10,11,14,17,19,20,21,22,24,26,30,31,32,33,37,40,41,45,47,48,50,52,53,56,60,61,63,64,67,68,69,70,71,74,75,76,77];
+      const isPositive = positiveIds.includes(card.id);
+      const answer = (isPositive && !reversed) || (!isPositive && reversed) ? 'YES' : 'NO';
+      const yesMessages = [
+        `The energy around your question is expansive and affirming. ${card.uprightMeaning} Trust the opening before you — this is a genuine invitation forward.`,
+        `${card.name} brings clear confirmation. ${card.uprightMeaning} The stars align in your favor. Move with confidence.`,
+        `The answer resounds with quiet certainty. ${card.uprightMeaning} Your path is clear — take the first step.`
+      ];
+      const noMessages = [
+        `The cards counsel patience. ${card.reversedMeaning || card.uprightMeaning} This is not a permanent no, but a sacred pause — something is not yet aligned.`,
+        `${card.name} asks you to wait. ${card.reversedMeaning || card.uprightMeaning} More preparation, reflection, or timing is needed before this door opens.`,
+        `The oracle sees resistance in this direction. ${card.reversedMeaning || card.uprightMeaning} The universe is redirecting you toward something better suited to your highest good.`
+      ];
+      const msgs = answer === 'YES' ? yesMessages : noMessages;
+      return msgs[card.id % msgs.length];
+    },
+    getVerdict: (card, reversed) => {
+      const positiveIds = [0,3,6,7,8,10,11,14,17,19,20,21,22,24,26,30,31,32,33,37,40,41,45,47,48,50,52,53,56,60,61,63,64,67,68,69,70,71,74,75,76,77];
+      const isPositive = positiveIds.includes(card.id);
+      return (isPositive && !reversed) || (!isPositive && reversed) ? 'YES' : 'NO';
+    }
+  }
+};
+
+/* ════════════════════════════════════════════
+   IMAGE HELPERS
+════════════════════════════════════════════ */
+function getImgPath(pc) {
+  const id = pc.id;
+  if (id < 22) return IMG_FOLDER + MAJOR_NUMS[id] + ' — ' + MAJOR_NAMES[id] + '.png';
+  const minorIdx = id - 22;
+  const suitIdx  = Math.floor(minorIdx / 14);
+  const rankIdx  = minorIdx % 14;
+  return IMG_FOLDER + MINOR_RANKS[rankIdx] + ' of ' + MINOR_SUITS[suitIdx] + '.png';
+}
+
+/* ════════════════════════════════════════════
+   ZOOM
+════════════════════════════════════════════ */
+function openZoom(pc, posLabel) {
+  const card = CARDS.find(c => c.id === pc.id) || {};
+  const sym = SYMS[pc.id % SYMS.length];
+  const imgEl = document.getElementById('zoomCardImg');
+  const fallEl = document.getElementById('zoomFallback');
+  const imgPath = getImgPath(pc);
+  imgEl.src = imgPath;
+  imgEl.className = 'zoom-card-img' + (pc.reversed ? ' reversed' : '');
+  imgEl.onload = () => { imgEl.style.display='block'; fallEl.style.display='none'; };
+  imgEl.onerror = () => {
+    imgEl.style.display='none'; fallEl.style.display='flex';
+    document.getElementById('zoomFSym').textContent = sym;
+    document.getElementById('zoomFName').textContent = card.name || '';
+  };
+  document.getElementById('zoomPos').textContent = posLabel || '';
+  document.getElementById('zoomName').textContent = card.name || '';
+  document.getElementById('zoomNum').textContent = card.number ? `${card.number} — ${card.name}` : card.name || '';
+  const orientEl = document.getElementById('zoomOrient');
+  orientEl.textContent = pc.reversed ? 'Reversed' : 'Upright';
+  orientEl.className = 'zoom-orient ' + (pc.reversed ? 'reversed' : 'upright');
+  document.getElementById('zoomMeaning').textContent = pc.reversed ? card.reversedMeaning : card.uprightMeaning;
+  document.getElementById('zoomDesc').textContent = card.description || '';
+  document.getElementById('zoomOverlay').classList.add('on');
+  document.body.style.overflow = 'hidden';
+}
+function closeZoom() {
+  document.getElementById('zoomOverlay').classList.remove('on');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', e => { if(e.key==='Escape') closeZoom(); });
+
+/* ════════════════════════════════════════════
+   TOAST
+════════════════════════════════════════════ */
+function showToast(msg, ms=2800) {
+  const t = document.getElementById('toast');
+  t.textContent = msg; t.classList.add('on');
+  setTimeout(() => t.classList.remove('on'), ms);
+}
+
+/* ════════════════════════════════════════════
+   HISTORY
+════════════════════════════════════════════ */
+function saveHistory(category, cards, question) {
+  try {
+    const hist = JSON.parse(localStorage.getItem('tarotHistory') || '[]');
+    hist.unshift({
+      category, question,
+      cardCount: cards.length,
+      cardNames: cards.map(c => { const f=CARDS.find(x=>x.id===c.id); return (f?.name||'?')+(c.reversed?' (Rev)':''); }).join(', '),
+      date: new Date().toISOString()
+    });
+    if(hist.length>50) hist.pop();
+    localStorage.setItem('tarotHistory', JSON.stringify(hist));
+  } catch(e) {}
+}
+
+/* ════════════════════════════════════════════
+   SYNTHESIS GENERATOR (predefined)
+════════════════════════════════════════════ */
+function buildSynthesis(category, parsedCards, posLabels) {
+  if(parsedCards.length === 1) return null; // single cards do not need synthesis
+  const names = parsedCards.map((pc,i) => {
+    const f = CARDS.find(c=>c.id===pc.id);
+    return `${posLabels[i]||`Card ${i+1}`}: ${f?.name||'Unknown'}${pc.reversed?' (Reversed)':''}`;
+  }).join(' · ');
+
+  const synths = {
+    general: [
+      `Your spread tells a story of continuous becoming. The energies woven through ${parsedCards.length} cards reveal a clear narrative arc — honour where you have been, stand firmly in where you are, and walk boldly toward the horizon that awaits you.`,
+      `These cards do not speak in isolation — they speak as one voice. Together, they form a map of the terrain your soul is navigating. Trust the thread that connects them; it is the thread of your own deeper knowing.`,
+      `The universe has arranged these cards with intention. Each one is a piece of a larger picture that only you can fully see. Sit with this reading, let it breathe, and allow its wisdom to unfold over time.`
+    ],
+    career: [
+      `Your professional journey is at an inflection point. The cards laid before you are not random — they reflect the precise energies at work in your career right now. Honour what you have built, address what hinders you, and move boldly toward what is calling you forward.`,
+      `The path ahead in your work is illuminated, not clouded. These cards reveal both your greatest strengths and the areas that require your conscious attention. Channel this wisdom into deliberate, grounded action.`,
+      `Your career carries the imprint of everything you have experienced and learned. The spread before you confirms: your next chapter of professional growth is not only possible — it is already in motion.`
+    ],
+    relationship: [
+      `Love is a living, breathing force — and your reading shows it in motion. The cards reveal the energetic landscape of your connections: what has been experienced, what is present now, and what the heart is moving toward. Tend to this landscape with patience and truth.`,
+      `Relationships are mirrors, and these cards hold up the clearest of reflections. What you see may be beautiful, challenging, or both — but it is always honest. Let the wisdom in this spread guide you toward deeper love and understanding.`,
+      `The heart has its own intelligence, and the cards honour it completely. Your reading speaks to the sacred work of connection — the courage it takes, the grace it requires, and the profound joy it offers when nurtured with intention.`
+    ],
+    health: [
+      `Your body, mind, and spirit are in conversation — and this reading captures that dialogue beautifully. The cards illuminate where your vital energy flows freely and where it is being called to heal. Approach your wellbeing with the same gentleness and wisdom these cards embody.`,
+      `Wellness is not a destination but a practice, and your reading reflects exactly where you stand on that path. Take note of both the areas of strength and those calling for more tender attention. You have more capacity for healing than you may currently realize.`,
+      `These cards form a complete picture of your holistic health. Trust what resonates, sit with what challenges you, and remember: every step toward balance — however small — is a sacred act of self-love.`
+    ],
+    yesno: [
+      `The oracle has spoken. Trust what you feel when you read this answer — your initial reaction carries more wisdom than any doubt that follows.`,
+    ]
+  };
+  const arr = synths[category] || synths.general;
+  const idx = parsedCards.reduce((a,c) => a+c.id, 0) % arr.length;
+  return arr[idx];
+}
+
+/* ════════════════════════════════════════════
+   ENERGY BARS (yes/no only)
+════════════════════════════════════════════ */
+function buildEnergyBars(parsedCards) {
+  const positiveIds = [0,3,6,7,8,10,11,14,17,19,20,21,22,24,26,30,31,32,33,37,40,41,45,47,48,50,52,53,56,60,61,63,64,67,68,69,70,71,74,75,76,77];
+  const total = parsedCards.length;
+  const yesCards = parsedCards.filter(pc => {
+    const isPos = positiveIds.includes(pc.id);
+    return (isPos && !pc.reversed) || (!isPos && pc.reversed);
+  }).length;
+  const yesPct = Math.round((yesCards / total) * 100);
+  const noPct = 100 - yesPct;
+  return `
+  <div class="energy-section">
+    <div class="energy-label">Reading Energy Distribution</div>
+    <div class="energy-bars">
+      <div class="energy-row">
+        <span class="energy-row-label">Affirming</span>
+        <div class="energy-bar-track">
+          <div class="energy-bar-fill" id="energyYes" style="width:0"></div>
+        </div>
+        <span class="energy-pct" id="energyYesPct">0%</span>
+      </div>
+      <div class="energy-row">
+        <span class="energy-row-label">Cautioning</span>
+        <div class="energy-bar-track">
+          <div class="energy-bar-fill reversed" id="energyNo" style="width:0"></div>
+        </div>
+        <span class="energy-pct" id="energyNoPct">0%</span>
+      </div>
+    </div>
+  </div>`;
+}
+
+/* ════════════════════════════════════════════
+   MAIN RENDER
+════════════════════════════════════════════ */
+function renderReading() {
+  const usp = new URLSearchParams(location.search);
+  const cardParam = usp.get('cards') || '';
+  const category  = usp.get('category') || 'general';
+  const question  = usp.get('question') ? decodeURIComponent(usp.get('question')) : '';
+
+  const parsedCards = cardParam.split(',').filter(Boolean).map(s => ({
+    id: parseInt(s),
+    reversed: s.endsWith('r')
+  })).filter(pc => !isNaN(pc.id) && pc.id >= 0 && pc.id < 78);
+
+  // Fallback demo if no params
+  if(parsedCards.length === 0) {
+    parsedCards.push({id: 0, reversed: false}, {id: 7, reversed: false}, {id: 14, reversed: true});
+    // Use general as default
+  }
+
+  const cfg = CAT_CONFIG[category] || CAT_CONFIG.general;
+  const posLabels = (cfg.posLabels || POS)[parsedCards.length] || parsedCards.map((_,i) => `Card ${i+1}`);
+
+  // Save to history
+  saveHistory(category, parsedCards, question);
+
+  const root = document.getElementById('resultRoot');
+
+  // ── YES/NO: get verdict for single card
+  let verdictHTML = '';
+  if(category === 'yesno' && parsedCards.length === 1) {
+    const verdict = cfg.getVerdict(CARDS.find(c=>c.id===parsedCards[0].id)||{}, parsedCards[0].reversed);
+    const isYes = verdict === 'YES';
+    verdictHTML = `
+    <div class="verdict-banner" id="verdictBanner">
+      <div class="verdict-circle ${isYes?'yes':'no'}">
+        ${isYes ? 'YES' : 'NO'}
+      </div>
+      <div class="verdict-label">${isYes ? '✦ The oracle affirms' : '◈ The oracle counsels patience'}</div>
+    </div>`;
+  }
+
+  // ── BUILD HTML ──────────────────────────────────────
+  let html = `
+  <div class="r-head">
+    <div class="r-category-badge">
+      <span class="badge-icon">${cfg.icon}</span>
+      ${cfg.label}
+    </div>
+    <h1 class="r-title">The Cards Have Spoken</h1>
+    <p class="r-subtitle">${cfg.subtitle}</p>
+  </div>`;
+
+  // Question box
+  if(question) {
+    html += `
+  <div class="q-box">
+    <div class="q-box-label">Your Question</div>
+    <div class="q-box-text">"${question}"</div>
+  </div>`;
+  }
+
+  // Cards row — special layout for yes/no
+  if(category === 'yesno') {
+    // Dedicated yes/no hero: large card + verdict side by side (or stacked mobile)
+    html += '<div class="yesno-hero">';
+    parsedCards.forEach((pc, idx) => {
+      const card = CARDS.find(c=>c.id===pc.id) || {name:'Unknown', number:'?'};
+      const sym = SYMS[pc.id % SYMS.length];
+      const imgPath = getImgPath(pc);
+      const posLabel = posLabels[idx] || `Card ${idx+1}`;
+      const isYesNo = true;
+      const positiveIds = [0,3,6,7,8,10,11,14,17,19,20,21,22,24,26,30,31,32,33,37,40,41,45,47,48,50,52,53,56,60,61,63,64,67,68,69,70,71,74,75,76,77];
+      const isPos = positiveIds.includes(pc.id);
+      const verdict = (isPos && !pc.reversed) || (!isPos && pc.reversed) ? 'YES' : 'NO';
+      const isYes = verdict === 'YES';
+      html += `
+      <div class="yesno-card-wrap" style="animation: slideUp 0.7s ${idx*0.15}s var(--ease) both">
+        <div class="yesno-card-visual has-img ${pc.reversed?'reversed':''}" onclick="openZoom(${JSON.stringify(pc)},'${posLabel}')">
+          <img class="r-visual-img" src="${imgPath}" alt="${card.name}"
+            onerror="this.style.display='none';this.parentElement.classList.remove('has-img')">
+          <div class="r-visual-overlay">
+            <span class="rvo-num">${card.number||''}</span>
+            <span class="rvo-name">${card.name}</span>
+          </div>
+          <div class="r-visual-fallback">
+            <span class="rv-sym" style="font-size:3rem;margin:0.4rem 0">${sym}</span>
+            <span class="rv-name" style="font-family:var(--fs);font-size:0.65rem;color:var(--gold-light);text-transform:uppercase;letter-spacing:0.1em;line-height:1.3;margin-top:0.2rem">${card.name}</span>
+          </div>
+        </div>
+      </div>
+      <div class="yesno-card-name">${card.name}</div>
+      <span class="yesno-card-orient ${pc.reversed?'reversed':'upright'}">${pc.reversed?'Reversed':'Upright'}</span>
+      <div class="yesno-verdict">
+        <div class="yesno-verdict-circle ${isYes?'yes':'no'}">${verdict}</div>
+        <div class="yesno-verdict-label">${isYes ? '✦ The oracle affirms' : '◈ The oracle counsels patience'}</div>
+      </div>`;
+    });
+    html += '</div>';
+  } else {
+    // Standard multi-card layout
+    html += '<div class="cards-row">';
+    parsedCards.forEach((pc, idx) => {
+      const card = CARDS.find(c=>c.id===pc.id) || {name:'Unknown', number:'?'};
+      const sym = SYMS[pc.id % SYMS.length];
+      const imgPath = getImgPath(pc);
+      const posLabel = posLabels[idx] || `Card ${idx+1}`;
+      html += `
+      <div class="r-card" style="animation-delay:${idx*0.15}s">
+        <div class="r-visual has-img ${pc.reversed?'reversed':''}" onclick="openZoom(${JSON.stringify(pc)},'${posLabel}')">
+          <img class="r-visual-img" src="${imgPath}" alt="${card.name}"
+            onerror="this.style.display='none';this.parentElement.classList.remove('has-img')">
+          <div class="r-visual-overlay">
+            <span class="rvo-num">${card.number||''}</span>
+            <span class="rvo-name">${card.name}</span>
+          </div>
+          <div class="r-visual-fallback">
+            <span class="rv-sym">${sym}</span>
+            <span class="rv-name">${card.name}</span>
+          </div>
+        </div>
+        <div class="r-pos">${posLabel}</div>
+        <span class="r-orientation ${pc.reversed?'reversed':'upright'}">${pc.reversed?'Reversed':'Upright'}</span>
+      </div>`;
+    });
+    html += '</div>';
+  }
+
+  // Divider
+  html += `<div class="divider"><span>✦</span></div>`;
+
+  // Interpretations
+  html += `<div class="interp-section">
+  <div class="interp-label">${cfg.icon} Your ${cfg.label} Reading ${cfg.icon}</div>`;
+
+  parsedCards.forEach((pc, idx) => {
+    const card = CARDS.find(c=>c.id===pc.id) || {name:'Unknown',number:'?',uprightMeaning:'',reversedMeaning:'',description:''};
+    const sym = SYMS[pc.id % SYMS.length];
+    const imgPath = getImgPath(pc);
+    const posLabel = posLabels[idx] || `Card ${idx+1}`;
+    const interp = cfg.getInterp(card, pc.reversed);
+    const baseMeaning = pc.reversed ? card.reversedMeaning : card.uprightMeaning;
+
+    html += `
+  <div class="ci" style="animation-delay:${0.1 + idx*0.12}s">
+    <div class="ci-inner">
+      <div class="ci-card-col">
+        <img class="ci-thumb ${pc.reversed?'reversed':''}" src="${imgPath}" alt="${card.name}"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="ci-thumb-fallback" style="display:none">${sym}</div>
+        <div class="ci-pos-tag">${posLabel}</div>
+      </div>
+      <div class="ci-content">
+        <div class="ci-head">
+          <div>
+            <div class="ci-card-name">${card.name}</div>
+            <span class="ci-card-num">${card.number ? card.number + ' · ' : ''}${pc.reversed?'Reversed':'Upright'}</span>
+          </div>
+          <span class="ci-orient ${pc.reversed?'reversed':'upright'}">${pc.reversed?'✦ Reversed':'✦ Upright'}</span>
+        </div>
+        <div class="ci-cat-label">
+          <span class="ci-cat-icon">${cfg.icon}</span>
+          ${cfg.label} Interpretation
+        </div>
+        <div class="ci-interpretation">${interp}</div>
+        <div class="ci-base-meaning">
+          <strong>Core Meaning</strong>
+          ${baseMeaning}
+        </div>
+      </div>
+    </div>
+  </div>`;
+  });
+
+  html += '</div>'; // end interp-section
+
+  // Synthesis
+  const synth = buildSynthesis(category, parsedCards, posLabels);
+  if(synth) {
+    html += `
+  <div class="synthesis">
+    <div class="synthesis-label">✦ The Reading in Full ✦</div>
+    <p class="synthesis-text">${synth}</p>
+  </div>`;
+  }
+
+  // Action buttons
+  html += `
+  <div class="act-strip">
+    <a href="card-selection.html?category=${category}" class="act-btn"><span>✦</span> New Reading</a>
+    <a href="reading-type.html" class="act-btn"><span>◈</span> Change Category</a>
+    <a href="history.html" class="act-btn"><span>📖</span> My History</a>
+    <button class="act-btn" onclick="window.print()"><span>🖨</span> Print / Save</button>
+  </div>`;
+
+  // Resonance
+  html += `
+  <div class="resonance">
+    <h2>Did this reading resonate?</h2>
+    <p>Your reflection helps the oracle grow wiser.</p>
+    <div class="res-btns">
+      <button class="res-btn" onclick="resClick(this,'yes')">✦ Deeply, yes</button>
+      <button class="res-btn" onclick="resClick(this,'somewhat')">◈ Somewhat</button>
+      <button class="res-btn" onclick="resClick(this,'no')">✕ Not quite</button>
+    </div>
+    <div class="res-ty" id="resTy">
+      <p id="resMsg">✦ Thank you for sharing.</p>
+    </div>
+  </div>`;
+
+  root.innerHTML = html;
+
+  // Animate energy bars after DOM ready
+  if(category === 'yesno' && parsedCards.length > 1) {
+    const positiveIds = [0,3,6,7,8,10,11,14,17,19,20,21,22,24,26,30,31,32,33,37,40,41,45,47,48,50,52,53,56,60,61,63,64,67,68,69,70,71,74,75,76,77];
+    const yesCards = parsedCards.filter(pc => {
+      const isPos = positiveIds.includes(pc.id);
+      return (isPos && !pc.reversed) || (!isPos && pc.reversed);
+    }).length;
+    const yesPct = Math.round((yesCards / parsedCards.length) * 100);
+    const noPct = 100 - yesPct;
+    setTimeout(() => {
+      const y = document.getElementById('energyYes');
+      const n = document.getElementById('energyNo');
+      const yp = document.getElementById('energyYesPct');
+      const np = document.getElementById('energyNoPct');
+      if(y) y.style.width = yesPct + '%';
+      if(n) n.style.width = noPct + '%';
+      if(yp) yp.textContent = yesPct + '%';
+      if(np) np.textContent = noPct + '%';
+    }, 400);
+  }
+}
+
+function resClick(btn, val) {
+  const msgs = {
+    yes: '✦ Wonderful. The universe is glad its message reached you.',
+    somewhat: '◈ The cards often whisper before they speak clearly. Return to this reading.',
+    no: '✕ The cards are patient. Another time, they will speak more clearly to your situation.'
+  };
+  document.querySelectorAll('.res-btn').forEach(b=>b.classList.remove('on'));
+  btn.classList.add('on');
+  document.getElementById('resMsg').textContent = msgs[val] || '';
+  document.getElementById('resTy').classList.add('on');
+}
+
+/* ════════════════════════════════════════════
+   HAMBURGER NAV
+════════════════════════════════════════════ */
+(function() {
+  var b = document.getElementById('navHamburger');
+  var d = document.getElementById('navDrawer');
+  var o = document.getElementById('navOverlay');
+  if(!b) return;
+  function openNav() { b.classList.add('open'); d.classList.add('open'); o.classList.add('open'); document.body.style.overflow='hidden'; }
+  function closeNav() { b.classList.remove('open'); d.classList.remove('open'); o.classList.remove('open'); document.body.style.overflow=''; }
+  b.onclick = function() { b.classList.contains('open') ? closeNav() : openNav(); };
+  o.onclick = closeNav;
+  d.querySelectorAll('a').forEach(function(a) { a.addEventListener('click', closeNav); });
+  var pg = location.pathname.split('/').pop() || 'result.html';
+  document.querySelectorAll('.nav-links a, .nav-drawer a').forEach(function(a) {
+    if(a.getAttribute('href') === pg) a.classList.add('nav-active');
+  });
+  window.addEventListener('resize', function() { if(window.innerWidth > 900) closeNav(); });
+  document.addEventListener('keydown', function(e) { if(e.key === 'Escape') { closeNav(); closeZoom(); } });
+})();
+
+/* ════════════════════════════════════════════
+   INIT
+════════════════════════════════════════════ */
+document.getElementById('loading').classList.add('on');
+setTimeout(function() {
+  renderReading();
+  document.getElementById('loading').classList.remove('on');
+}, 600);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- ══ SEO: PRIMARY ══ -->
+  <title>Daily Tarot Card — Your Free Card of the Day | Tarot's Whisper</title>
+  <meta name="description" content="Draw your free daily tarot card. Get upright and reversed meanings, spiritual guidance and a personal message for today. A new card drawn from all 78 every day.">
+  <meta name="keywords" content="daily tarot card, tarot card of the day, free daily tarot, daily tarot reading, morning tarot, today tarot card">
+  <meta name="author" content="Tarot's Whisper">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://tarotswhisper.com/daily.html">
+
+  <!-- ══ SEO: OPEN GRAPH ══ -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tarotswhisper.com/daily.html">
+  <meta property="og:title" content="Daily Tarot Card of the Day | Tarot's Whisper">
+  <meta property="og:description" content="Draw your free daily tarot card for personalised guidance and spiritual reflection. Refreshes every day.">
+  <meta property="og:image" content="https://tarotswhisper.com/og-preview.jpg">
+  <meta property="og:site_name" content="Tarot's Whisper">
+
+  <!-- ══ SEO: TWITTER CARD ══ -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Daily Tarot Card of the Day | Tarot's Whisper">
+  <meta name="twitter:description" content="Draw your free daily tarot card for personalised guidance and spiritual reflection. Refreshes every day.">
+  <meta name="twitter:image" content="https://tarotswhisper.com/og-preview.jpg">
+
+  <!-- ══ SEO: STRUCTURED DATA ══ -->
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Daily Tarot Card","description":"Draw your free daily tarot card for guidance, reflection and spiritual insight.","url":"https://tarotswhisper.com/daily.html","isPartOf":{"@type":"WebSite","name":"Tarot's Whisper","url":"https://tarotswhisper.com"},"breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://tarotswhisper.com/"},{"@type":"ListItem","position":2,"name":"Daily Card","item":"https://tarotswhisper.com/daily.html"}]}}</script>
+
+  <!-- ══ ADS: GOOGLE ADSENSE ══ -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXX" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cinzel:wght@400;500;600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    :root{
+      --midnight:#05071a;--navy:#080c2a;--navy-light:#131a52;
+      --gold:#c9a84c;--gold-light:#e8c97e;--gold-pale:#f5e6b8;--gold-dim:#6b5520;
+      --white:#f8f4ee;--white-dim:rgba(248,244,238,0.65);--glow:rgba(201,168,76,0.35);
+      --fd:'Cinzel Decorative',serif;--fs:'Cinzel',serif;--fb:'EB Garamond',serif;
+      --ease:cubic-bezier(0.25,0.46,0.45,0.94);
+    }
+    body{
+      background:var(--midnight);color:var(--white);
+      font-family:var(--fb);font-size:1.05rem;line-height:1.7;
+      min-height:100vh;overflow-x:hidden;
+      opacity:0;animation:bodyFade 0.6s 0.1s ease forwards;
+    }
+    @keyframes bodyFade{to{opacity:1;}}
+    ::-webkit-scrollbar{width:7px}::-webkit-scrollbar-track{background:var(--navy)}
+    ::-webkit-scrollbar-thumb{background:var(--gold-dim);border-radius:4px}
+    ::-webkit-scrollbar-thumb:hover{background:var(--gold)}
+    @keyframes slideUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes cardGlow{
+      0%,100%{box-shadow:0 0 35px var(--glow),0 30px 80px rgba(0,0,0,0.5);}
+      50%{box-shadow:0 0 65px rgba(201,168,76,0.55),0 30px 80px rgba(0,0,0,0.5);}
+    }
+
+    #starCanvas{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none;}
+
+    
+    
+    
+    
+    
+
+    .page{position:relative;z-index:1;}
+
+    .daily-wrap{
+      max-width:750px;margin:0 auto;
+      padding:8rem 2rem 5rem;text-align:center;
+    }
+
+    .eye{
+      font-family:var(--fs);font-size:0.72rem;letter-spacing:0.45em;
+      text-transform:uppercase;color:var(--gold);margin-bottom:0.5rem;
+      animation:slideUp 0.8s 0.2s var(--ease) both;
+    }
+    .d-title{
+      font-family:var(--fd);font-size:clamp(2rem,5vw,3.5rem);
+      color:var(--gold-pale);text-shadow:0 0 50px rgba(201,168,76,0.3);
+      margin-bottom:0.5rem;
+      animation:slideUp 0.8s 0.35s var(--ease) both;
+    }
+    .d-date{
+      font-family:var(--fs);font-size:0.72rem;letter-spacing:0.35em;
+      text-transform:uppercase;color:var(--gold-dim);margin-bottom:3rem;
+      animation:slideUp 0.8s 0.5s var(--ease) both;
+    }
+
+    .card-section{
+      display:flex;flex-direction:column;align-items:center;gap:2.5rem;
+    }
+    .d-visual{
+      width:185px;height:298px;border-radius:10px;
+      background:linear-gradient(155deg,var(--navy-light),var(--navy));
+      border:2px solid var(--gold);
+      position:relative;overflow:hidden;
+      animation:cardGlow 3s ease-in-out infinite, slideUp 0.9s 0.65s var(--ease) both;
+    }
+    .d-visual-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;border-radius:8px;display:block;}
+    .d-visual-overlay{position:absolute;bottom:0;left:0;right:0;z-index:2;background:linear-gradient(to top,rgba(5,7,26,0.97) 0%,rgba(5,7,26,0.6) 60%,transparent 100%);padding:1.2rem 0.5rem 0.5rem;text-align:center;border-radius:0 0 8px 8px;}
+    .d-visual-overlay .dvo-num{font-family:var(--fs);font-size:0.72rem;color:var(--gold);letter-spacing:0.2em;display:block;}
+    .d-visual-overlay .dvo-name{font-family:var(--fs);font-size:0.6rem;color:var(--gold-light);text-transform:uppercase;letter-spacing:0.1em;line-height:1.3;display:block;margin-top:0.2rem;}
+    .d-visual-fallback{position:absolute;inset:0;z-index:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:1.5rem;}
+    .dv-num{font-family:var(--fs);font-size:0.85rem;color:var(--gold);letter-spacing:0.2em;margin-bottom:0.5rem;}
+    .dv-sym{font-size:4.2rem;margin-bottom:0.6rem;}
+    .dv-name{font-family:var(--fd);font-size:0.88rem;color:var(--gold-pale);text-align:center;line-height:1.3;}
+    .d-visual.has-img .d-visual-fallback{display:none;}
+    .d-visual:not(.has-img) .d-visual-img{display:none;}
+    .d-visual:not(.has-img) .d-visual-overlay{display:none;}
+
+    .d-meaning{
+      max-width:520px;text-align:left;
+      animation:slideUp 0.9s 0.85s var(--ease) both;
+    }
+    .d-meaning h3{
+      font-family:var(--fd);font-size:1.5rem;color:var(--gold-pale);
+      margin-bottom:1rem;text-align:center;
+    }
+    .d-meaning p{color:var(--white-dim);line-height:1.85;margin-bottom:1rem;font-size:1.08rem;}
+    .d-meaning .desc{
+      border-top:1px solid rgba(201,168,76,0.18);padding-top:1rem;
+      font-style:italic;font-size:0.97rem;opacity:0.75;
+    }
+
+    .divider{display:flex;align-items:center;gap:1rem;max-width:360px;margin:3rem auto;}
+    .divider::before{content:'';flex:1;height:1px;background:linear-gradient(to right,transparent,var(--gold-dim));}
+    .divider::after{content:'';flex:1;height:1px;background:linear-gradient(to left,transparent,var(--gold-dim));}
+    .divider span{color:var(--gold);font-size:1.1rem;}
+
+    .btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-bottom:5rem;}
+    .btn-p{
+      display:inline-block;font-family:var(--fs);font-size:0.82rem;letter-spacing:0.22em;
+      text-transform:uppercase;text-decoration:none;color:var(--gold);
+      border:1px solid var(--gold);padding:1rem 2.5rem;
+      clip-path:polygon(14px 0%,100% 0%,calc(100% - 14px) 100%,0% 100%);
+      position:relative;overflow:hidden;transition:color 0.4s;
+    }
+    .btn-p::before{
+      content:'';position:absolute;inset:0;background:var(--gold);
+      transform:translateX(-105%);transition:transform 0.4s;z-index:-1;
+    }
+    .btn-p:hover{color:var(--midnight);}
+    .btn-p:hover::before{transform:translateX(0);}
+    .btn-g{
+      display:inline-block;font-family:var(--fs);font-size:0.78rem;letter-spacing:0.18em;
+      text-transform:uppercase;text-decoration:none;color:var(--white-dim);
+      border:1px solid rgba(248,244,238,0.2);padding:1rem 2rem;border-radius:2px;transition:all 0.3s;
+    }
+    .btn-g:hover{color:var(--gold-light);border-color:var(--gold-dim);}
+
+    @media(max-width:680px){}
+  
+    /* ═══════════════════════════════════════
+       GOOGLE ADS SYSTEM
+       ═══════════════════════════════════════ */
+
+    /* ── FIXED RIGHT SIDEBAR (desktop ≥1100px) ── */
+    .ad-sidebar-fixed { display: none; }
+
+    @media (min-width: 1100px) {
+      .ad-sidebar-fixed {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: fixed;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        width: 160px;
+        z-index: 90;
+      }
+      .ad-sidebar-inner {
+        width: 160px;
+        min-height: 600px;
+        background: rgba(8,12,42,0.7);
+        border-left: 1px solid rgba(201,168,76,0.1);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0.5rem 0;
+      }
+      body.has-sidebar { margin-right: 164px; }
+    }
+    @media (min-width: 1400px) {
+      .ad-sidebar-fixed { width: 300px; }
+      .ad-sidebar-inner { width: 300px; }
+      body.has-sidebar { margin-right: 304px; }
+    }
+
+    .ad-sidebar-label,
+    .ad-mid-label,
+    .ad-sticky-label {
+      font-family: 'Cinzel', serif;
+      font-size: 0.42rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(201,168,76,0.22);
+      text-align: center;
+      display: block;
+      width: 100%;
+      padding: 3px 0 2px;
+    }
+
+    /* ── MID-CONTENT (auto responsive) ── */
+    .ad-mid-wrap {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 2rem 0;
+    }
+
+    /* ── STICKY BOTTOM (mobile + tablet, hidden on desktop) ── */
+    .ad-sticky-bottom { display: none; }
+
+    @media (max-width: 1099px) {
+      .ad-sticky-bottom {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        bottom: 0; left: 0; right: 0;
+        z-index: 9999;
+        background: rgba(5,7,26,0.97);
+        border-top: 1px solid rgba(201,168,76,0.18);
+        padding-bottom: env(safe-area-inset-bottom, 0px);
+        min-height: 62px;
+      }
+      .ad-sticky-close {
+        position: absolute; top: 3px; right: 8px;
+        background: none; border: none;
+        color: rgba(201,168,76,0.28);
+        font-size: 0.75rem; cursor: pointer;
+        padding: 2px 5px; line-height: 1;
+        transition: color 0.2s;
+      }
+      .ad-sticky-close:hover { color: rgba(201,168,76,0.65); }
+      body { padding-bottom: 68px !important; }
+    }
+
+  
+    /* ══════════════════════════════════════
+       NAVBAR — desktop + hamburger mobile
+       ══════════════════════════════════════ */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      padding: 0 2.5rem;
+      height: 62px;
+      display: flex; align-items: center; justify-content: space-between;
+      background: rgba(5,7,26,0.97);
+      border-bottom: 1px solid rgba(201,168,76,0.1);
+      backdrop-filter: blur(8px);
+    }
+    .nav-brand {
+      font-family: var(--fd); font-size: 0.9rem; color: var(--gold);
+      text-decoration: none; letter-spacing: 0.05em;
+      text-shadow: 0 0 22px var(--glow); white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .nav-brand:hover { text-shadow: 0 0 38px rgba(201,168,76,0.7); }
+
+    /* Desktop links */
+    .nav-links {
+      display: flex; align-items: center;
+      gap: 0; list-style: none; margin: 0; padding: 0;
+    }
+    .nav-links li a {
+      font-family: var(--fs); font-size: 0.62rem; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--white-dim);
+      text-decoration: none; padding: 0 1rem; line-height: 62px;
+      display: block; transition: color 0.25s; white-space: nowrap;
+      position: relative;
+    }
+    .nav-links li a::after {
+      content: ''; position: absolute; bottom: 0; left: 1rem; right: 1rem;
+      height: 2px; background: var(--gold);
+      transform: scaleX(0); transition: transform 0.25s; transform-origin: center;
+    }
+    .nav-links li a:hover { color: var(--gold-light); }
+    .nav-links li a:hover::after { transform: scaleX(1); }
+    .nav-links li a.nav-active { color: var(--gold); }
+    .nav-links li a.nav-active::after { transform: scaleX(1); }
+
+    /* Hamburger button — hidden on desktop */
+    .nav-hamburger {
+      display: none; flex-direction: column; justify-content: center;
+      gap: 5px; background: none; border: none; cursor: pointer;
+      padding: 8px; margin-right: -8px; z-index: 210;
+    }
+    .nav-hamburger span {
+      display: block; width: 24px; height: 2px;
+      background: var(--gold); border-radius: 2px;
+      transition: transform 0.3s, opacity 0.3s, width 0.3s;
+      transform-origin: center;
+    }
+    /* Hamburger → X animation */
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; width: 0; }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* Mobile drawer */
+    .nav-drawer {
+      display: none; /* always hidden on desktop */
+    }
+
+    /* ── MOBILE ── */
+    @media (max-width: 900px) {
+      nav { padding: 0 1.4rem; }
+      .nav-links { display: none; } /* hide desktop links */
+      .nav-hamburger { display: flex; }
+
+      .nav-drawer {
+        display: block;
+        position: fixed; top: 62px; left: 0; right: 0; bottom: 0;
+        background: rgba(5,7,26,0.99);
+        border-top: 1px solid rgba(201,168,76,0.12);
+        z-index: 199;
+        transform: translateX(100%);
+        transition: transform 0.35s cubic-bezier(0.25,0.46,0.45,0.94);
+        overflow-y: auto;
+        padding: 1.5rem 0 2rem;
+      }
+      .nav-drawer.open {
+        transform: translateX(0);
+      }
+      .nav-drawer ul {
+        list-style: none; margin: 0; padding: 0;
+      }
+      .nav-drawer ul li {
+        border-bottom: 1px solid rgba(201,168,76,0.07);
+      }
+      .nav-drawer ul li a {
+        display: flex; align-items: center; gap: 0.8rem;
+        font-family: var(--fs); font-size: 0.78rem; letter-spacing: 0.18em;
+        text-transform: uppercase; color: var(--white-dim); text-decoration: none;
+        padding: 1.1rem 1.8rem; transition: color 0.2s, background 0.2s;
+      }
+      .nav-drawer ul li a .nav-icon { font-size: 1.1rem; width: 24px; text-align: center; }
+      .nav-drawer ul li a:hover,
+      .nav-drawer ul li a.nav-active {
+        color: var(--gold); background: rgba(201,168,76,0.06);
+      }
+      .nav-drawer-brand {
+        font-family: var(--fd); font-size: 1rem; color: var(--gold);
+        text-align: center; padding: 0.5rem 0 1.5rem;
+        text-shadow: 0 0 22px var(--glow); letter-spacing: 0.05em;
+        display: block;
+      }
+      /* Dim overlay behind drawer */
+      .nav-overlay {
+        display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5);
+        z-index: 198; top: 62px;
+      }
+      .nav-overlay.open { display: block; }
+    }
+    /* On tablet (900-1100) still show hamburger */
+    @media (min-width: 901px) {
+      .nav-hamburger { display: none; }
+      .nav-drawer { display: none !important; }
+      .nav-overlay { display: none !important; }
+    }
+
+  </style>
+</head>
+<body>
+<canvas id="starCanvas"></canvas>
+
+<nav>
+  <a href="index.html" class="nav-brand">✦ Tarot's Whisper</a>
+
+  <!-- Desktop links -->
+  <ul class="nav-links">
+    <li><a href="daily.html">Daily Card</a></li>
+    <li><a href="library.html">Card Library</a></li>
+    <li><a href="dream.html">Dream Journal</a></li>
+    <li><a href="tools.html">Tools</a></li>
+    <li><a href="stats.html">Insights</a></li>
+    <li><a href="history.html">My Readings</a></li>
+  </ul>
+
+  <!-- Hamburger button (mobile) -->
+  <button class="nav-hamburger" id="navHamburger" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Mobile drawer -->
+<div class="nav-drawer" id="navDrawer" role="navigation" aria-label="Mobile menu">
+  <a href="index.html" class="nav-drawer-brand">✦ Tarot's Whisper</a>
+  <ul>
+    <li><a href="daily.html"><span class="nav-icon">☽</span>Daily Card</a></li>
+    <li><a href="library.html"><span class="nav-icon">📚</span>Card Library</a></li>
+    <li><a href="dream.html"><span class="nav-icon">🌙</span>Dream Journal</a></li>
+    <li><a href="tools.html"><span class="nav-icon">✦</span>Tools</a></li>
+    <li><a href="stats.html"><span class="nav-icon">◈</span>Insights</a></li>
+    <li><a href="history.html"><span class="nav-icon">📖</span>My Readings</a></li>
+  </ul>
+</div>
+<div class="nav-overlay" id="navOverlay"></div>
+
+<div class="page">
+  <div class="daily-wrap">
+    <p class="eye">✦ &nbsp; Daily Wisdom &nbsp; ✦</p>
+    <h1 class="d-title">Your Card for Today</h1>
+    <p class="d-date" id="dateLabel"></p>
+
+    <div class="card-section">
+      <div class="d-visual has-img" id="dVisual">
+        <img class="d-visual-img" id="dImg" src="" alt=""
+             onerror="document.getElementById('dVisual').classList.remove('has-img')">
+        <div class="d-visual-fallback">
+          <span class="dv-num" id="dNum"></span>
+          <span class="dv-sym" id="dSym"></span>
+          <span class="dv-name" id="dName"></span>
+        </div>
+        <div class="d-visual-overlay">
+          <span class="dvo-num" id="dOverlayNum"></span>
+          <span class="dvo-name" id="dOverlayName"></span>
+        </div>
+      </div>
+      <div class="d-meaning">
+        <h3 id="dFullName"></h3>
+        <p id="dDesc"></p>
+        <p class="desc" id="dMeaning"></p>
+      </div>
+    </div>
+
+    
+        <!-- ══ MID-CONTENT AD ══ -->
+        <div class="ad-mid-wrap">
+          <span class="ad-mid-label">Advertisement</span>
+          <ins class="adsbygoogle"
+               style="display:block"
+               data-ad-client="ca-pub-XXXXXXXXXX"
+               data-ad-slot="XXXXXXXXXX"
+               data-ad-format="auto"
+               data-full-width-responsive="true"></ins>
+          <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+        </div>
+        <div class="divider"><span>✦</span></div>
+    <p style="color:var(--white-dim);font-style:italic;max-width:420px;margin:0 auto 2rem;font-size:1rem;">
+      This card has been drawn for you today. Carry its wisdom as you move through your hours.
+    </p>
+    
+        <!-- ══ MID-CONTENT AD ══ -->
+        <div class="ad-mid-wrap">
+          <span class="ad-mid-label">Advertisement</span>
+          <ins class="adsbygoogle"
+               style="display:block"
+               data-ad-client="ca-pub-XXXXXXXXXX"
+               data-ad-slot="XXXXXXXXXX"
+               data-ad-format="auto"
+               data-full-width-responsive="true"></ins>
+          <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+        </div>
+        <div class="btns">
+      <a href="index.html" class="btn-p">Begin a Full Reading ✦</a>
+      <a href="history.html" class="btn-g">My Readings</a>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ---- Star Canvas ---- */
+(function(){
+  const c=document.getElementById('starCanvas'),ctx=c.getContext('2d');
+  let W,H,stars=[],lines=[];
+  function resize(){W=c.width=innerWidth;H=c.height=innerHeight;}
+  function build(){
+    stars=[];
+    for(let i=0;i<Math.floor(W*H/2800);i++)
+      stars.push({x:Math.random()*W,y:Math.random()*H,r:Math.random()*1.4+0.25,
+        a:Math.random()*0.7+0.3,da:(Math.random()*0.015+0.004)*(Math.random()<0.5?1:-1),
+        gold:Math.random()<0.07});
+    lines=[];
+    for(let i=0;i<8;i++){
+      const a=stars[Math.floor(Math.random()*stars.length)];
+      const b=stars[Math.floor(Math.random()*stars.length)];
+      const d=Math.hypot(b.x-a.x,b.y-a.y);
+      if(d>40&&d<180)lines.push([a,b]);
+    }
+  }
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    lines.forEach(([a,b])=>{
+      ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);
+      ctx.strokeStyle='rgba(201,168,76,0.07)';ctx.lineWidth=0.6;ctx.stroke();
+    });
+    stars.forEach(s=>{
+      s.a+=s.da;
+      if(s.a>1){s.a=1;s.da=-Math.abs(s.da);}
+      if(s.a<0.1){s.a=0.1;s.da=Math.abs(s.da);}
+      ctx.beginPath();
+      if(s.gold){
+        const g=ctx.createRadialGradient(s.x,s.y,0,s.x,s.y,s.r*5);
+        g.addColorStop(0,`rgba(201,168,76,${s.a})`);g.addColorStop(1,'rgba(201,168,76,0)');
+        ctx.arc(s.x,s.y,s.r*5,0,Math.PI*2);ctx.fillStyle=g;
+      }else{
+        ctx.arc(s.x,s.y,s.r,0,Math.PI*2);
+        ctx.fillStyle=`rgba(200,220,255,${s.a*0.65})`;
+      }
+      ctx.fill();
+    });
+    requestAnimationFrame(draw);
+  }
+  resize();build();draw();
+  window.addEventListener('resize',()=>{resize();build();});
+})();
+
+/* Nav transitions */
+document.querySelectorAll('a[href]').forEach(a=>{
+  const href=a.getAttribute('href');
+  if(!href||href.startsWith('#'))return;
+  a.addEventListener('click',e=>{
+    if(e.ctrlKey||e.metaKey)return;
+    e.preventDefault();
+    document.body.style.transition='opacity 0.35s ease';
+    document.body.style.opacity='0';
+    setTimeout(()=>location.href=href,350);
+  });
+});
+
+/* ---- Cards Data ---- */
+const CARDS=[
+  {id:0,name:"The Fool",number:"0",uprightMeaning:"New beginnings, innocence, spontaneity — a joyful leap of faith into glorious uncertainty. Trust the unknown.",description:"The Fool stands at the cliff's edge, wholly unafraid. His white rose is pure potential. He leaps anyway. Today, so might you."},
+  {id:1,name:"The Magician",number:"I",uprightMeaning:"Manifestation, resourcefulness, power, inspired action. You have every tool you need — the question is your will.",description:"Before him: wand, cup, sword, pentacle. Above him: the infinity symbol. He lifts his hand and reality bends."},
+  {id:2,name:"The High Priestess",number:"II",uprightMeaning:"Intuition, sacred knowledge, the subconscious. Truths wait beyond the veil. Stillness is your greatest wisdom today.",description:"Between pillars of light and dark she sits, scroll in hand. The veil behind her hides what only stillness reveals."},
+  {id:3,name:"The Empress",number:"III",uprightMeaning:"Abundance, beauty, nature, nurturing. You are fertile ground — what you tend will bloom spectacularly.",description:"Crowned with stars, draped in comfort, surrounded by lush grain. She is the earth itself — generous and endlessly creative."},
+  {id:4,name:"The Emperor",number:"IV",uprightMeaning:"Authority, structure, stability. Bring order to your world today through discipline and deliberate action.",description:"Armored on a stone throne, mountains behind him. He does not bend. He endures."},
+  {id:5,name:"The Hierophant",number:"V",uprightMeaning:"Tradition, spiritual wisdom, institutions. Seek established guidance — the wisdom of those who walked before you.",description:"Between two pillars he blesses two initiates. He holds the keys to hidden mysteries, but only for those ready."},
+  {id:6,name:"The Lovers",number:"VI",uprightMeaning:"Love, harmony, values alignment, profound choice. Lead with the heart today — in all matters, in all ways.",description:"Man and woman beneath an angel. Between them: choice, and the courage to choose with open eyes."},
+  {id:7,name:"The Chariot",number:"VII",uprightMeaning:"Control, willpower, determination. Harness your opposing forces today — victory through sheer focused resolve.",description:"A warrior steers two sphinxes with will alone. No reins. Just certainty. He arrives."},
+  {id:8,name:"Strength",number:"VIII",uprightMeaning:"Courage, compassion, patience. True power is gentle today. The lion yields not to force but to love.",description:"She closes the lion's mouth with bare hands, expression serene. She needs no sword. She needs no armor."},
+  {id:9,name:"The Hermit",number:"IX",uprightMeaning:"Soul-searching, introspection, solitude. Today is for going inward. The answers you seek are already within.",description:"Alone at the summit, lantern raised. He has climbed further than anyone. Now he illuminates the path below."},
+  {id:10,name:"Wheel of Fortune",number:"X",uprightMeaning:"Good luck, karma, life cycles, destiny. The wheel turns in your favor today. Embrace the change it brings.",description:"The wheel spins in the sky. It has turned for all things. Now it turns for you."},
+  {id:11,name:"Justice",number:"XI",uprightMeaning:"Fairness, truth, cause and effect. Today calls for clarity and honesty — in what you give, and what you expect.",description:"Scale and raised sword. She sees without bias. She weighs without mercy. She is correct, always."},
+  {id:12,name:"The Hanged Man",number:"XII",uprightMeaning:"Pause, surrender, new perspectives. Today is for stepping back. What you seek cannot be forced — only received.",description:"Suspended by one foot, face serene. A halo of light. In surrender: everything gained."},
+  {id:13,name:"Death",number:"XIII",uprightMeaning:"Transformation, endings, magnificent rebirth. Something is completing its cycle today. Let it. What follows will astonish you.",description:"The white horse walks through fallen kings. The sun rises in the distance. Every ending holds a dawn."},
+  {id:14,name:"Temperance",number:"XIV",uprightMeaning:"Balance, moderation, patience. Blend the opposing elements of your day with grace. The middle path shines.",description:"One foot on land, one in water. Water flows between two cups. The perfect blend holds."},
+  {id:15,name:"The Devil",number:"XV",uprightMeaning:"Shadow self, attachment, restriction. Today, see the chains for what they are — and notice how loosely they hang.",description:"Two figures chained below. But look — the chains hang loose. The choice has always been yours."},
+  {id:16,name:"The Tower",number:"XVI",uprightMeaning:"Sudden change, revelation, upheaval. Something may shake loose today. Welcome it — false structures must fall.",description:"Lightning strikes. The tower was a lie. Its collapse is not punishment — it is truth arriving at last."},
+  {id:17,name:"The Star",number:"XVII",uprightMeaning:"Hope, faith, renewal, inspiration. Today you are held by something greater. Trust. The light has not left you.",description:"She kneels at the water's edge, pouring renewal. One great star above. Seven smaller ones. She is hope made flesh."},
+  {id:18,name:"The Moon",number:"XVIII",uprightMeaning:"Illusion, fear, the unconscious. Trust your intuition today through the beautiful confusion. Not all is as it appears.",description:"Two towers under the full moon. The path winds into darkness. Trust what you cannot yet see."},
+  {id:19,name:"The Sun",number:"XIX",uprightMeaning:"Positivity, joy, success, vitality. Today, the universe conspires in your favor. You are radiant. You are enough.",description:"A child rides a white horse, arms spread to the enormous sun. Sunflowers bloom. This is life at its most complete."},
+  {id:20,name:"Judgement",number:"XX",uprightMeaning:"Rebirth, inner calling, absolution, awakening. Something is calling you today toward your truest self. Answer.",description:"An angel blows a trumpet. Below, figures rise from coffins in ecstasy. This is not ending — it is arrival."},
+  {id:21,name:"The World",number:"XXI",uprightMeaning:"Completion, wholeness, integration. You have arrived somewhere important. Today, celebrate — you are whole.",description:"A dancer wreathed in laurel. The journey is done. The cycle fulfilled. You are home."}
+];
+const SYMS=['☽','✦','⊕','✺','⋈','⊛','♦','⊜','❈','⋄','⊗','⊞','⋅','✧','⊙','☿','✵','⊟','☾','☀','⊖','⊘'];
+
+/* Date-seeded daily card */
+const today=new Date();
+const ds=today.toISOString().split('T')[0];
+const seed=ds.split('-').join('');
+const idx=parseInt(seed)%CARDS.length;
+const card=CARDS[idx];
+const sym=SYMS[card.id%SYMS.length];
+
+const opts={weekday:'long',year:'numeric',month:'long',day:'numeric'};
+document.getElementById('dateLabel').textContent=today.toLocaleDateString('en-US',opts).toUpperCase();
+const IMG_FOLDER='cards/';
+const MAJOR_NUMS_D=["0","I","II","III","IV","V","VI","VII","VIII","IX","X","XI","XII","XIII","XIV","XV","XVI","XVII","XVIII","XIX","XX","XXI"];
+const imgPath = IMG_FOLDER + MAJOR_NUMS_D[card.id] + ' — ' + card.name + '.png';
+
+document.getElementById('dImg').src=imgPath;
+document.getElementById('dImg').alt=card.name;
+document.getElementById('dNum').textContent=card.number;
+document.getElementById('dSym').textContent=sym;
+document.getElementById('dName').textContent=card.name;
+document.getElementById('dOverlayNum').textContent=card.number;
+document.getElementById('dOverlayName').textContent=card.name;
+document.getElementById('dFullName').textContent=card.name;
+document.getElementById('dDesc').textContent=card.description;
+document.getElementById('dMeaning').textContent=card.uprightMeaning;
+
+/* Save daily to history if first visit today */
+const prev=localStorage.getItem('tarotDailyDate');
+if(prev!==ds){
+  const hist=JSON.parse(localStorage.getItem('tarotHistory')||'[]');
+  hist.unshift({category:'Daily Card',cardCount:1,cardNames:card.name,question:'',date:new Date().toISOString()});
+  if(hist.length>20)hist.pop();
+  localStorage.setItem('tarotHistory',JSON.stringify(hist));
+  localStorage.setItem('tarotDailyDate',ds);
+}
+</script>
+
+  <script>document.body.classList.add('has-sidebar');</script>
+
+  <!-- ══ FIXED SIDEBAR AD — desktop right column ══ -->
+  <div class="ad-sidebar-fixed">
+    <div class="ad-sidebar-inner">
+      <span class="ad-sidebar-label">Advertisement</span>
+      <ins class="adsbygoogle"
+           style="display:block;width:160px;height:600px"
+           data-ad-client="ca-pub-XXXXXXXXXX"
+           data-ad-slot="XXXXXXXXXX"></ins>
+      <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+    </div>
+  </div>
+
+  <!-- ══ STICKY BOTTOM AD — mobile/tablet ══ -->
+  <div class="ad-sticky-bottom" id="adStickyBottom">
+    <button class="ad-sticky-close"
+      onclick="document.getElementById('adStickyBottom').style.display='none';document.body.style.removeProperty('padding-bottom')"
+      aria-label="Close ad">✕</button>
+    <span class="ad-sticky-label">Advertisement</span>
+    <ins class="adsbygoogle"
+         style="display:block;width:320px;height:50px"
+         data-ad-client="ca-pub-XXXXXXXXXX"
+         data-ad-slot="XXXXXXXXXX"></ins>
+    <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+  </div>
+
+  <script>
+  /* ── HAMBURGER NAV ── */
+  (function(){
+    const btn   = document.getElementById('navHamburger');
+    const drawer= document.getElementById('navDrawer');
+    const overlay=document.getElementById('navOverlay');
+    if(!btn) return;
+
+    function openMenu(){
+      btn.classList.add('open');
+      drawer.classList.add('open');
+      overlay.classList.add('open');
+      btn.setAttribute('aria-expanded','true');
+      document.body.style.overflow='hidden';
+    }
+    function closeMenu(){
+      btn.classList.remove('open');
+      drawer.classList.remove('open');
+      overlay.classList.remove('open');
+      btn.setAttribute('aria-expanded','false');
+      document.body.style.overflow='';
+    }
+    btn.addEventListener('click',()=> btn.classList.contains('open') ? closeMenu() : openMenu());
+    overlay.addEventListener('click', closeMenu);
+
+    /* Close on any drawer link click */
+    drawer.querySelectorAll('a[href]').forEach(a=>{
+      a.addEventListener('click', ()=>{ closeMenu(); });
+    });
+
+    /* Mark active page */
+    const page = location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('.nav-links a, .nav-drawer a[href]').forEach(a=>{
+      if(a.getAttribute('href') === page) a.classList.add('nav-active');
+    });
+
+    /* Close drawer on resize to desktop */
+    window.addEventListener('resize',()=>{ if(window.innerWidth>900) closeMenu(); });
+
+    /* Escape key closes */
+    document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeMenu(); });
+  })();
+  </script>
+</body>
+</html>
