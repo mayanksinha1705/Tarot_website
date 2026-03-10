@@ -559,6 +559,35 @@
       .nav-overlay { display: none !important; }
     }
 
+  
+    /* ══ FOOTER ══ */
+    .site-footer {
+      position: relative; z-index: 1;
+      text-align: center;
+      padding: 2.5rem 2rem 5rem;
+      border-top: 1px solid rgba(201,168,76,0.1);
+      margin-top: 3rem;
+    }
+    .footer-links {
+      display: flex; justify-content: center; flex-wrap: wrap;
+      gap: 0.4rem 1.8rem; list-style: none;
+      margin-bottom: 1rem;
+    }
+    .footer-links a {
+      font-family: var(--fs); font-size: 0.6rem;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--gold-dim); text-decoration: none;
+      transition: color 0.25s;
+    }
+    .footer-links a:hover { color: var(--gold-light); }
+    .footer-copy {
+      font-family: var(--fs); font-size: 0.52rem;
+      letter-spacing: 0.15em; color: rgba(201,168,76,0.2);
+      text-transform: uppercase;
+    }
+    @media(max-width:680px) {
+      .site-footer { padding-bottom: 5.5rem; }
+    }
   </style>
 </head>
 <body>
@@ -576,6 +605,11 @@
     <li><a href="tools.html">Tools</a></li>
     <li><a href="stats.html">Insights</a></li>
     <li><a href="history.html">My Readings</a></li>
+    <li class="nav-sep"></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="privacy.html">Privacy</a></li>
+    <li><a href="terms.html">Terms</a></li>
   </ul>
 
   <!-- Hamburger button (mobile) -->
@@ -594,7 +628,13 @@
     <li><a href="tools.html"><span class="nav-icon">✦</span>Tools</a></li>
     <li><a href="stats.html"><span class="nav-icon">◈</span>Insights</a></li>
     <li><a href="history.html"><span class="nav-icon">📖</span>My Readings</a></li>
-  </ul>
+  
+      <li class="drawer-sep"></li>
+      <li><a href="about.html">&#9432; About</a></li>
+      <li><a href="contact.html">&#9993; Contact</a></li>
+      <li><a href="privacy.html">&#128274; Privacy Policy</a></li>
+      <li><a href="terms.html">&#128203; Terms</a></li>
+      </ul>
 </div>
 <div class="nav-overlay" id="navOverlay"></div>
 
@@ -782,6 +822,14 @@ document.querySelector('.hero-btn').addEventListener('click', e => {
   document.getElementById('categories').scrollIntoView({ behavior: 'smooth' });
 });
 </script>
+
+  
+  <!-- ══ FOOTER ══ -->
+  <footer class="site-footer">
+    <ul class="footer-links">
+      <li><a href="about.html">About</a></li></ul>
+    <p class="footer-copy">&copy; 2025 Tarot's Whisper &mdash; All rights reserved</p>
+  </footer>
 
   <script>document.body.classList.add('has-sidebar');</script>
 

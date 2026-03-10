@@ -30,6 +30,60 @@
 
   <!-- ══ ADS: GOOGLE ADSENSE ══ -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXX" crossorigin="anonymous"></script>
+  <!-- Firebase -->
+  <script type="module">
+    import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js';
+    import { getFirestore, doc, getDoc, setDoc, increment, collection, addDoc, serverTimestamp }
+      from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js';
+
+    /* ── Firebase config — replace with your project values ── */
+    const firebaseConfig = {
+      apiKey:            "YOUR_API_KEY",
+      authDomain:        "YOUR_PROJECT.firebaseapp.com",
+      projectId:         "YOUR_PROJECT_ID",
+      storageBucket:     "YOUR_PROJECT.appspot.com",
+      messagingSenderId: "YOUR_SENDER_ID",
+      appId:             "YOUR_APP_ID"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db  = getFirestore(app);
+
+    /* ── Resonance vote counter ── */
+    window.firebaseResonance = async function(val) {
+      try {
+        const ref = doc(db, 'resonance', 'totals');
+        // Increment the chosen option atomically
+        await setDoc(ref, { [val]: increment(1) }, { merge: true });
+
+        // Also log the individual vote with timestamp + reading context
+        const params = new URLSearchParams(location.search);
+        await addDoc(collection(db, 'resonance_votes'), {
+          vote:      val,
+          category:  params.get('category') || 'unknown',
+          cardCount: params.get('count')    || 'unknown',
+          timestamp: serverTimestamp()
+        });
+      } catch(e) {
+        console.warn('Firebase resonance write failed:', e.message);
+      }
+    };
+
+    /* ── Contact form submissions ── */
+    window.firebaseContactSubmit = async function(name, email, subject, message) {
+      try {
+        await addDoc(collection(db, 'contact_messages'), {
+          name, email, subject, message,
+          timestamp: serverTimestamp(),
+          read: false
+        });
+        return true;
+      } catch(e) {
+        console.warn('Firebase contact write failed:', e.message);
+        return false;
+      }
+    };
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Cinzel+Decorative:wght@400;700&family=EB+Garamond:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
   <style>
@@ -807,6 +861,35 @@
       .ad-sticky-close:hover { color: rgba(201,168,76,0.65); }
       body { padding-bottom: 68px !important; }
     }
+  
+    /* ══ FOOTER ══ */
+    .site-footer {
+      position: relative; z-index: 1;
+      text-align: center;
+      padding: 2.5rem 2rem 5rem;
+      border-top: 1px solid rgba(201,168,76,0.1);
+      margin-top: 3rem;
+    }
+    .footer-links {
+      display: flex; justify-content: center; flex-wrap: wrap;
+      gap: 0.4rem 1.8rem; list-style: none;
+      margin-bottom: 1rem;
+    }
+    .footer-links a {
+      font-family: var(--fs); font-size: 0.6rem;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--gold-dim); text-decoration: none;
+      transition: color 0.25s;
+    }
+    .footer-links a:hover { color: var(--gold-light); }
+    .footer-copy {
+      font-family: var(--fs); font-size: 0.52rem;
+      letter-spacing: 0.15em; color: rgba(201,168,76,0.2);
+      text-transform: uppercase;
+    }
+    @media(max-width:680px) {
+      .site-footer { padding-bottom: 5.5rem; }
+    }
   </style>
 </head>
 <body>
@@ -877,6 +960,11 @@
     <li><a href="tools.html">Tools</a></li>
     <li><a href="stats.html">Insights</a></li>
     <li><a href="history.html">My Readings</a></li>
+    <li class="nav-sep"></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="privacy.html">Privacy</a></li>
+    <li><a href="terms.html">Terms</a></li>
   </ul>
   <button class="nav-hamburger" id="navHamburger" aria-label="Open menu" aria-expanded="false">
     <span></span><span></span><span></span>
@@ -891,7 +979,13 @@
     <li><a href="tools.html"><span style="font-size:1.1rem;width:24px;display:inline-block;text-align:center">✦</span>Tools</a></li>
     <li><a href="stats.html"><span style="font-size:1.1rem;width:24px;display:inline-block;text-align:center">◈</span>Insights</a></li>
     <li><a href="history.html"><span style="font-size:1.1rem;width:24px;display:inline-block;text-align:center">📖</span>My Readings</a></li>
-  </ul>
+  
+      <li class="drawer-sep"></li>
+      <li><a href="about.html">&#9432; About</a></li>
+      <li><a href="contact.html">&#9993; Contact</a></li>
+      <li><a href="privacy.html">&#128274; Privacy Policy</a></li>
+      <li><a href="terms.html">&#128203; Terms</a></li>
+      </ul>
 </div>
 <div class="nav-overlay" id="navOverlay"></div>
 
@@ -1688,6 +1782,11 @@ function resClick(btn, val) {
   btn.classList.add('on');
   document.getElementById('resMsg').textContent = msgs[val] || '';
   document.getElementById('resTy').classList.add('on');
+
+  // Save to Firebase (non-blocking)
+  if (typeof window.firebaseResonance === 'function') {
+    window.firebaseResonance(val);
+  }
 }
 
 /* ════════════════════════════════════════════
@@ -1721,5 +1820,16 @@ setTimeout(function() {
 }, 600);
 
 </script>
+
+  <!-- ══ FOOTER ══ -->
+  <footer class="site-footer">
+    <ul class="footer-links">
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="privacy.html">Privacy Policy</a></li>
+      <li><a href="terms.html">Terms</a></li>
+    </ul>
+    <p class="footer-copy">&copy; 2025 Tarot's Whisper &mdash; All rights reserved</p>
+  </footer>
 </body>
 </html>
