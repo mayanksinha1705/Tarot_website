@@ -5,19 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- SEO -->
-  <title>About Tarot's Whisper — Free Online Tarot Readings</title>
-  <meta name="description" content="Learn about Tarot's Whisper — a free online tarot platform with all 78 cards, daily readings, dream journal and more. No account required. Your data stays private.">
+  <title>About Tarot's Whisper — Free Online Tarot for Everyone</title>
+  <meta name="keywords" content="about tarot whisper, free tarot website, tarot reading platform, online tarot app, privacy-first tarot, tarot for beginners, free tarot no sign up">
+  <meta name="description" content="Learn about Tarot's Whisper — a free, private online tarot platform with all 78 cards, five reading types, daily cards, dream journal and more. No account needed.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://tarotswhisper.com/about.html">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://tarotswhisper.com/about.html">
   <meta property="og:title" content="About Tarot's Whisper">
-  <meta property="og:description" content="Learn about Tarot's Whisper — free tarot readings for everyone, with complete privacy and no sign-up needed.">
+  <meta property="og:description" content="Free online tarot readings for everyone. No sign-up. Complete privacy. All 78 cards, five reading types, daily card and more.">
   <meta property="og:image" content="https://tarotswhisper.com/og-preview.jpg">
   <meta property="og:site_name" content="Tarot's Whisper">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="About Tarot's Whisper">
-  <meta name="twitter:description" content="Learn about Tarot's Whisper — free tarot readings for everyone, with complete privacy and no sign-up needed.">
+  <meta name="twitter:description" content="Free online tarot readings for everyone. No sign-up. Complete privacy. All 78 cards, five reading types, daily card and more.">
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"AboutPage","name":"About Tarot's Whisper","description":"Learn about Tarot's Whisper — a free online tarot reading platform with all 78 cards.","url":"https://tarotswhisper.com/about.html","isPartOf":{"@type":"WebSite","name":"Tarot's Whisper","url":"https://tarotswhisper.com"}}</script>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXX" crossorigin="anonymous"></script>
 
@@ -116,6 +117,15 @@
     .footer-links a{font-family:var(--fs);font-size:0.6rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold-dim);text-decoration:none;transition:color 0.25s;}
     .footer-links a:hover{color:var(--gold-light);}
     .footer-copy{font-family:var(--fs);font-size:0.52rem;letter-spacing:0.15em;color:rgba(201,168,76,0.2);text-transform:uppercase;}
+  
+    /* ══ SEO CONTENT BLOCKS ══ */
+    .seo-block{position:relative;z-index:1;max-width:860px;margin:0 auto 1rem;padding:1.8rem 2.2rem;background:linear-gradient(135deg,rgba(13,18,64,0.5),rgba(5,7,26,0.65));border:1px solid rgba(201,168,76,0.1);border-radius:10px;}
+    .seo-block h2{font-family:var(--fs,'Cinzel',serif);font-size:.68rem;letter-spacing:.28em;text-transform:uppercase;color:#c9a84c;margin-bottom:.75rem;}
+    .seo-block h3{font-family:var(--fs,'Cinzel',serif);font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(201,168,76,.75);margin:1.1rem 0 .5rem;}
+    .seo-block p{color:rgba(248,244,238,.52);line-height:1.82;font-size:.91rem;margin-bottom:.7rem;}
+    .seo-block p:last-child{margin-bottom:0;}
+    .seo-block a{color:#e8c97e;text-decoration:none;border-bottom:1px solid rgba(232,201,126,.22);}
+    .seo-block a:hover{border-color:#e8c97e;}
   </style>
 </head>
 <body>
@@ -206,11 +216,18 @@
   </div>
 </div>
 
-  <footer class="site-footer">
+    <!-- ══ FOOTER ══ -->
+  <footer class="site-footer" aria-label="Site footer">
     <ul class="footer-links">
-      <li><a href="about.html">About</a></li></ul>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="privacy.html">Privacy Policy</a></li>
+      <li><a href="terms.html">Terms</a></li>
+    </ul>
     <p class="footer-copy">&copy; 2025 Tarot's Whisper &mdash; All rights reserved</p>
   </footer>
+
+  
 
 <script>
 (function(){const c=document.getElementById('starCanvas'),ctx=c.getContext('2d');let W,H,stars=[];function resize(){W=c.width=innerWidth;H=c.height=innerHeight;}function build(){stars=[];for(let i=0;i<Math.floor(W*H/3200);i++)stars.push({x:Math.random()*W,y:Math.random()*H,r:Math.random()*1.4+0.25,a:Math.random()*0.7+0.3,da:(Math.random()*0.015+0.004)*(Math.random()<.5?1:-1),gold:Math.random()<.07});}function draw(){ctx.clearRect(0,0,W,H);stars.forEach(s=>{s.a+=s.da;if(s.a>1){s.a=1;s.da=-Math.abs(s.da);}if(s.a<.1){s.a=.1;s.da=Math.abs(s.da);}ctx.beginPath();if(s.gold){const g=ctx.createRadialGradient(s.x,s.y,0,s.x,s.y,s.r*5);g.addColorStop(0,`rgba(201,168,76,${s.a})`);g.addColorStop(1,'rgba(201,168,76,0)');ctx.arc(s.x,s.y,s.r*5,0,Math.PI*2);ctx.fillStyle=g;}else{ctx.arc(s.x,s.y,s.r,0,Math.PI*2);ctx.fillStyle=`rgba(200,220,255,${s.a*.65})`;}ctx.fill();});requestAnimationFrame(draw);}resize();build();draw();window.addEventListener('resize',()=>{resize();build();});})();
